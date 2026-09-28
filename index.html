@@ -297,24 +297,71 @@ function slide(d){document.getElementById('carousel').scrollBy({left:d*Math.min(
 function placeholder(name){alert(name+' — link a incorporar.');return false;}
 
 const summaries = {
-  1:{title:"Señales y MacroTendencias", intro:"Este espacio va a concentrar la síntesis de la clase a partir del transcript y de los materiales utilizados.", status:"content"},
+  1:{title:"Señales y MacroTendencias", status:"ready"},
   2:{title:"Open Finance & Green Finance", intro:"Este espacio va a concentrar la síntesis de la clase a partir del transcript y de los materiales utilizados.", status:"content"},
   3:{title:"La digitalización de los activos y la infraestructura", intro:"El resumen se habilitará después del encuentro del 2 de octubre.", status:"future"},
   4:{title:"Behavioral Economics e Inteligencia Artificial", intro:"El resumen se habilitará después del encuentro del 9 de octubre.", status:"future"},
   5:{title:"Foresight", intro:"El resumen se habilitará después del encuentro del 16 de octubre.", status:"future"},
   6:{title:"Future-Proof", intro:"El resumen se habilitará después de la jornada de cierre del 23 de octubre.", status:"future"}
 };
+
+function classOneSummary(){
+  return `<div class="summary-kicker">Clase 01 · 18.09.26</div>
+    <h3>Señales y MacroTendencias</h3>
+
+    <div class="class-lead">
+      <b>Idea central de la clase</b>
+      <p>Antes de hablar del futuro de las finanzas, ampliamos la mirada. La primera clase puso el foco en cuatro fuerzas que están transformando el contexto en el que operará la industria financiera: tecnología e IA, reconfiguración geopolítica, transición energética y nuevas demografías.</p>
+    </div>
+
+    <div class="forces-title">4 fuerzas que están cambiando el contexto</div>
+    <div class="forces-grid">
+      <div class="force-card"><div class="force-head"><span class="force-num">01</span><span class="force-icon">⌘</span></div><h4>Tecnología e IA</h4><p>La IA no aparece sólo como una nueva herramienta, sino como una tecnología capaz de modificar cómo trabajamos, decidimos e interactuamos. Agentes autónomos y nuevas interfaces anticipan un escenario que va mucho más allá del chatbot.</p></div>
+      <div class="force-card"><div class="force-head"><span class="force-num">02</span><span class="force-icon">◎</span></div><h4>Geopolítica</h4><p>El centro de gravedad global se está desplazando. El ascenso de China, las tensiones entre Oriente y Occidente y la creciente fragmentación obligan a mirar más allá de la urgencia local y entender cómo estas dinámicas afectan a la región y al sistema financiero.</p></div>
+      <div class="force-card"><div class="force-head"><span class="force-num">03</span><span class="force-icon">↗</span></div><h4>Transición energética</h4><p>Las renovables continúan avanzando más allá de los cambios políticos, también por costo, competitividad y seguridad energética. La energía se convierte en una cuestión económica y geopolítica, con implicancias directas para el financiamiento y la inversión.</p></div>
+      <div class="force-card"><div class="force-head"><span class="force-num">04</span><span class="force-icon">◌</span></div><h4>Nuevas demografías</h4><p>Nacemos menos y vivimos más. El envejecimiento poblacional cambia el mercado laboral, el consumo, los sistemas previsionales y quién concentra el patrimonio. Para las finanzas, esto abre oportunidades en ahorro, crédito, seguros y experiencias diseñadas para vidas más largas.</p></div>
+    </div>
+
+    <div class="ff-meaning">
+      <div class="meaning-mark">!</div>
+      <div><div class="meaning-title">¿Qué significa esto para Future Finance?</div>
+      <p>No alcanza con extrapolar el sistema financiero actual incorporándole nuevas tecnologías. Cambian simultáneamente los clientes, el trabajo, la distribución del poder global, la energía y las instituciones. Pensar las finanzas del futuro exige conectar lo que sucede dentro de la industria con transformaciones que están ocurriendo fuera de ella.</p></div>
+    </div>
+
+    <div class="questions-title">Preguntas que nos llevamos</div>
+    <div class="question-grid">
+      <div class="question-card"><span>01</span><p>¿Estamos mirando suficientemente fuera de nuestra industria para detectar las señales que pueden cambiar nuestro negocio?</p></div>
+      <div class="question-card"><span>02</span><p>¿Qué decisiones tomaríamos distinto hoy si diseñáramos productos para personas que van a vivir 90 o 100 años?</p></div>
+      <div class="question-card"><span>03</span><p>¿La IA será principalmente una herramienta de eficiencia o terminará cambiando la arquitectura misma de las organizaciones?</p></div>
+      <div class="question-card"><span>04</span><p>¿Cómo impactarán la fragmentación geopolítica y la transición energética sobre el dinero, los pagos, la inversión y el financiamiento?</p></div>
+    </div>
+
+    <div class="closing-question"><span>→</span><b>¿Estamos construyendo soluciones para el mundo que viene o seguimos optimizando soluciones para un mundo que está dejando de existir?</b></div>
+
+    <div class="experts-title">Expertos invitados</div>
+    <div class="experts-grid">
+      <div class="expert"><span>AU</span><div><b>Ariel Urcola</b><small>Complejidad y macrotendencias</small></div></div>
+      <div class="expert"><span>SS</span><div><b>Santiago Siri</b><small>Tecnología, IA y humanidad</small></div></div>
+      <div class="expert"><span>FM</span><div><b>Federico Merke</b><small>Geopolítica y transición energética</small></div></div>
+      <div class="expert"><span>MD</span><div><b>Miriam de Paoli</b><small>Demografía y longevidad</small></div></div>
+    </div>`;
+}
+
 function openSummary(n){
   const x=summaries[n], panel=document.getElementById('summary-panel'), c=document.getElementById('summary-content');
-  const placeholder = x.status==="future" ? "Disponible después de la clase." : "Contenido a incorporar desde el transcript de la clase.";
-  c.innerHTML=`<div class="summary-kicker">Clase ${String(n).padStart(2,'0')} · Resumen</div>
-    <h3>${x.title}</h3><p class="summary-intro">${x.intro}</p>
-    <div class="summary-grid">
-      <div class="summary-block"><b>01 · Resumen ejecutivo</b><p class="summary-placeholder">${placeholder}</p></div>
-      <div class="summary-block"><b>02 · Tendencias & señales</b><p class="summary-placeholder">${placeholder}</p></div>
-      <div class="summary-block"><b>03 · Incertidumbres</b><p class="summary-placeholder">${placeholder}</p></div>
-      <div class="summary-block"><b>04 · Preguntas que quedan abiertas</b><p class="summary-placeholder">${placeholder}</p></div>
-    </div>`;
+  if(n===1){
+    c.innerHTML=classOneSummary();
+  } else {
+    const placeholder = x.status==="future" ? "Disponible después de la clase." : "Contenido a incorporar desde el transcript de la clase.";
+    c.innerHTML=`<div class="summary-kicker">Clase ${String(n).padStart(2,'0')} · Resumen</div>
+      <h3>${x.title}</h3><p class="summary-intro">${x.intro}</p>
+      <div class="summary-grid">
+        <div class="summary-block"><b>01 · Resumen ejecutivo</b><p class="summary-placeholder">${placeholder}</p></div>
+        <div class="summary-block"><b>02 · Tendencias & señales</b><p class="summary-placeholder">${placeholder}</p></div>
+        <div class="summary-block"><b>03 · Incertidumbres</b><p class="summary-placeholder">${placeholder}</p></div>
+        <div class="summary-block"><b>04 · Preguntas que quedan abiertas</b><p class="summary-placeholder">${placeholder}</p></div>
+      </div>`;
+  }
   panel.classList.add('open');
   setTimeout(()=>panel.scrollIntoView({behavior:'smooth',block:'nearest'}),50);
 }
@@ -340,6 +387,39 @@ function closeSummary(){document.getElementById('summary-panel').classList.remov
 @media(max-width:560px){.summary-grid{grid-template-columns:1fr}.summary-panel{padding:24px 18px}.summary-panel h3{font-size:27px}}
 </style>
 
+
+
+<style>
+/* Formato estándar para resúmenes de clases */
+.class-lead{margin-top:24px;max-width:930px}
+.class-lead b,.forces-title,.questions-title,.experts-title{display:block;font-size:12px;font-weight:900;letter-spacing:.09em;text-transform:uppercase}
+.class-lead p{font-size:15px;line-height:1.6;color:#62676e;margin:6px 0 0}
+.forces-title,.questions-title,.experts-title{margin-top:30px}
+.forces-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:12px}
+.force-card{border:1px solid var(--line);border-radius:16px;padding:18px;background:#fff;min-height:245px}
+.force-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:22px}
+.force-num{font-size:12px;font-weight:900}
+.force-icon{width:38px;height:38px;border-radius:50%;background:var(--acid);display:grid;place-items:center;font-size:18px;font-weight:900}
+.force-card h4{font-size:18px;letter-spacing:-.035em;margin:0 0 9px}
+.force-card p{font-size:13px;line-height:1.5;color:#62676e;margin:0}
+.ff-meaning{margin-top:12px;background:#101217;color:#fff;border-radius:16px;padding:20px 24px;display:grid;grid-template-columns:50px 1fr;gap:16px;align-items:center}
+.meaning-mark{width:40px;height:40px;border:2px solid var(--acid);color:var(--acid);border-radius:50%;display:grid;place-items:center;font-size:20px;font-weight:900}
+.meaning-title{font-size:11px;font-weight:900;letter-spacing:.12em;text-transform:uppercase;margin-bottom:7px}
+.ff-meaning p{font-size:14px;line-height:1.55;margin:0;color:#f1f1ed}
+.question-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:10px}
+.question-card{background:#f7f7f3;border:1px solid var(--line);border-radius:14px;padding:15px;display:grid;grid-template-columns:34px 1fr;gap:10px;min-height:132px}
+.question-card span{width:30px;height:30px;border:1px solid #d9d9d3;border-radius:50%;display:grid;place-items:center;font-size:10px;font-weight:900}
+.question-card p{font-size:12px;line-height:1.45;margin:2px 0 0}
+.closing-question{margin-top:12px;background:var(--acid);border-radius:14px;padding:17px 20px;display:flex;align-items:center;gap:14px;font-size:16px;line-height:1.25}
+.closing-question span{width:34px;height:34px;border:1px solid #111;border-radius:50%;display:grid;place-items:center;flex:0 0 auto}
+.experts-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:12px}
+.expert{display:flex;align-items:center;gap:10px}
+.expert>span{width:42px;height:42px;border-radius:50%;background:#101217;color:var(--acid);display:grid;place-items:center;font-size:11px;font-weight:900;flex:0 0 auto}
+.expert b{display:block;font-size:13px}
+.expert small{display:block;font-size:11px;line-height:1.25;color:#697078;margin-top:2px}
+@media(max-width:900px){.forces-grid,.question-grid,.experts-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.forces-grid,.question-grid,.experts-grid{grid-template-columns:1fr}.force-card{min-height:auto}.ff-meaning{grid-template-columns:1fr}.closing-question{font-size:14px}}
+</style>
 
 <script>
 (function(){
