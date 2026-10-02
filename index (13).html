@@ -1,0 +1,593 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Future Finance 2026</title>
+<style>
+:root{--bg:#f5f5f1;--ink:#101217;--muted:#70747b;--line:#dedfd9;--acid:#dfff42;--white:#fff}
+*{box-sizing:border-box} html{scroll-behavior:smooth} body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+a{color:inherit;text-decoration:none} .wrap{max-width:1220px;margin:auto;padding:0 28px}
+nav{position:sticky;top:0;z-index:30;background:rgba(245,245,241,.93);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.nav{min-height:78px;display:flex;align-items:center;justify-content:space-between;gap:28px} .brand{font-weight:850;font-size:20px;letter-spacing:-.04em;white-space:nowrap}
+.brand b{display:inline-grid;place-items:center;width:30px;height:30px;border-radius:50%;background:#111;color:var(--acid);font-size:21px;margin-right:8px}
+.logos img{display:block;width:min(290px,34vw);height:auto} .links{display:flex;gap:18px;font-size:13px;color:#484c52}
+.hero{padding:78px 0 76px} .eyebrow{font-size:12px;font-weight:800;letter-spacing:.13em;text-transform:uppercase}
+h1{font-size:clamp(62px,10vw,128px);line-height:.82;letter-spacing:-.075em;margin:25px 0 28px} .lead{font-size:clamp(24px,3vw,38px);letter-spacing:-.045em;margin:0}
+.quick{display:grid;grid-template-columns:repeat(5,1fr);gap:11px;margin-top:45px} .quick a{background:white;border:1px solid var(--line);border-radius:18px;padding:17px;min-height:105px;display:flex;flex-direction:column;justify-content:space-between}
+.quick small{color:#999} .quick strong{font-size:15px} section{padding:72px 0;border-top:1px solid var(--line)} .head{display:flex;justify-content:space-between;gap:30px;align-items:end;margin-bottom:34px}
+h2{font-size:clamp(40px,5vw,64px);letter-spacing:-.055em;line-height:.95;margin:0} .desc{max-width:430px;color:var(--muted);font-size:14px;line-height:1.6}
+.program{display:grid;grid-template-columns:1fr 1fr;gap:13px} .pcard{background:#fff;border:1px solid var(--line);border-radius:22px;padding:25px;min-height:230px;display:flex;flex-direction:column}
+.pcard.current{background:#101217;color:#fff;border-color:#101217} .meta{display:flex;justify-content:space-between;font-size:12px;text-transform:uppercase;letter-spacing:.08em;color:#888d93} .current .meta{color:#aeb2b8}
+.pcard h3{font-size:27px;letter-spacing:-.04em;line-height:1.05;margin:26px 0 10px} .pcard p{font-size:14px;color:var(--muted);line-height:1.5;margin:0} .current p{color:#b9bdc2}
+.summary{margin-top:auto;padding-top:25px;font-size:12px;font-weight:800} .current .summary{color:var(--acid)} .carousel{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(300px,37%);gap:13px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;padding-bottom:15px}
+.carousel::-webkit-scrollbar{display:none} .meet{scroll-snap-align:start;background:white;border:1px solid var(--line);border-radius:22px;padding:23px;min-height:350px;display:flex;flex-direction:column} .meet.current{background:#101217;color:#fff;border-color:#101217}
+.num{font-size:72px;line-height:1;letter-spacing:-.07em;margin:28px 0 16px} .meet h3{font-size:23px;letter-spacing:-.035em;margin:0 0 9px} .meet p,.people{font-size:13px;line-height:1.55;color:var(--muted)} .meet.current p,.meet.current .people{color:#b9bdc2}
+.people{margin-top:auto;padding-top:22px} .sumlink{font-size:12px;font-weight:800;margin-top:18px} .current .sumlink{color:var(--acid)} .controls{display:flex;gap:8px} .arrow{border:1px solid #ccc;background:white;width:42px;height:42px;border-radius:50%;cursor:pointer;font-size:20px}
+.students{display:grid;grid-template-columns:repeat(3,1fr);gap:0 22px;background:#fff;border:1px solid var(--line);border-radius:24px;padding:24px 30px} .student{padding:15px 0;border-bottom:1px solid var(--line);font-size:14px;font-weight:650}
+.menti{background:#101217;color:white;border-radius:28px;padding:50px;display:grid;grid-template-columns:1.2fr .8fr;gap:35px} .menti h3{font-size:clamp(36px,5vw,60px);line-height:.98;letter-spacing:-.055em;margin:12px 0} .menti p{color:#b7bbc0;line-height:1.6}
+.btn{display:inline-flex;padding:14px 18px;border-radius:999px;background:var(--acid);font-size:13px;font-weight:850;color:#111} .radar{border:1px solid #30343a;border-radius:20px;padding:20px} .trend{padding:13px 0;border-bottom:1px solid #30343a;font-size:13px} .trend:last-child{border:0}
+.materials{display:grid;grid-template-columns:repeat(3,1fr);gap:12px} .material{background:white;border:1px solid var(--line);border-radius:20px;padding:22px;min-height:205px;display:flex;flex-direction:column} .material h3{font-size:21px;margin:28px 0 8px} .material p{font-size:13px;line-height:1.5;color:var(--muted);margin:0} .material a{margin-top:auto;padding-top:20px;font-size:12px;font-weight:850}
+footer{border-top:1px solid var(--line);padding:45px 0 65px;color:var(--muted);font-size:12px}
+@media(max-width:850px){.links{display:none}.logos img{width:230px}.quick{grid-template-columns:1fr 1fr}.program{grid-template-columns:1fr}.carousel{grid-auto-columns:84%}.students{grid-template-columns:1fr 1fr}.menti{grid-template-columns:1fr}.materials{grid-template-columns:1fr}}
+@media(max-width:560px){.wrap{padding:0 18px}.logos img{width:190px}.brand span{display:none}.quick{grid-template-columns:1fr}.students{grid-template-columns:1fr}.head{align-items:start;flex-direction:column}.carousel{grid-auto-columns:92%}h1{font-size:62px}}
+
+.repository{grid-column:1/-1;background:#111;color:#fff;border:1px solid #111;padding:30px;display:grid;grid-template-columns:1.35fr .65fr;gap:30px;align-items:center}
+.repository .eyebrow{color:#c8ff00}
+.repository h3{font-size:clamp(30px,4vw,54px);line-height:.96;margin:8px 0 14px;letter-spacing:-.04em}
+.repository p{max-width:760px;color:#d8d8d8;font-size:15px;line-height:1.6}
+.repository-actions{display:flex;flex-direction:column;gap:10px}
+.repository-actions a{display:block;text-align:center;text-decoration:none;font-weight:800;font-size:12px;letter-spacing:.04em;padding:14px 16px;border:1px solid #fff}
+.repository-actions .primary{background:#c8ff00;color:#111;border-color:#c8ff00}
+.repository-actions .secondary{background:transparent;color:#fff}
+.repository-tags{grid-column:1/-1;display:flex;flex-wrap:wrap;gap:8px;padding-top:4px}
+.repository-tags span{border:1px solid #555;padding:7px 10px;font-size:11px;text-transform:uppercase;letter-spacing:.05em}
+@media(max-width:760px){.repository{grid-template-columns:1fr;padding:22px}}
+
+</style>
+
+<style>
+#ff-login{
+  position:fixed; inset:0; z-index:99999; background:#f4f4ef;
+  display:flex; align-items:center; justify-content:center; padding:24px;
+  font-family:inherit;
+}
+#ff-login.hidden{display:none}
+.ff-login-card{
+  width:min(440px,100%); background:#fff; border:1px solid #deded8;
+  border-radius:24px; padding:36px; box-shadow:0 18px 60px rgba(0,0,0,.08);
+}
+.ff-login-brand{display:flex;align-items:center;gap:10px;font-weight:850;font-size:18px;margin-bottom:42px}
+.ff-login-dot{width:22px;height:22px;border-radius:50%;background:#111;display:inline-flex;align-items:center;justify-content:center;color:#dfff3f;font-weight:900}
+.ff-login-kicker{font-size:11px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:#777;margin-bottom:8px}
+.ff-login-card h1{font-size:40px;letter-spacing:-.05em;line-height:1;margin:0 0 10px}
+.ff-login-card .intro{color:#666;line-height:1.5;margin:0 0 28px}
+.ff-field{margin:0 0 14px}
+.ff-field label{display:block;font-size:12px;font-weight:750;margin-bottom:7px}
+.ff-field input{box-sizing:border-box;width:100%;padding:14px 15px;border:1px solid #d7d7d1;border-radius:12px;font:inherit;outline:none;background:#fff}
+.ff-field input:focus{border-color:#111}
+.ff-login-button{width:100%;margin-top:8px;padding:15px;border:0;border-radius:12px;background:#111;color:#fff;font-weight:800;cursor:pointer}
+.ff-login-button:hover{opacity:.92}
+#ff-login-error{min-height:20px;margin:12px 0 0;font-size:12px;color:#b42318}
+.ff-login-foot{margin-top:28px;padding-top:20px;border-top:1px solid #ecece7;font-size:11px;color:#888}
+</style>
+
+
+<style>
+.class2-forces{grid-template-columns:repeat(2,1fr)}
+.signal-tags{display:flex;flex-wrap:wrap;gap:7px;margin-top:18px}
+.signal-tags span{font-size:10px;font-weight:850;letter-spacing:.04em;text-transform:uppercase;border:1px solid var(--line);border-radius:999px;padding:7px 10px;background:#f7f7f3}
+.class2-experts{grid-template-columns:repeat(5,1fr)}
+@media(max-width:900px){.class2-forces{grid-template-columns:1fr}.class2-experts{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.class2-experts{grid-template-columns:1fr}}
+</style>
+
+</head>
+<body>
+
+<div id="ff-login" aria-label="Acceso Future Finance">
+  <form class="ff-login-card" onsubmit="return ffLogin(event)">
+    <div class="ff-login-brand"><span class="ff-login-dot">+</span> Future Finance</div>
+    <div class="ff-login-kicker">Universidad de San Andrés · +Partners</div>
+    <h1>Bienvenidos.</h1>
+    <p class="intro">Ingresá con las credenciales del programa para acceder al espacio digital de Future Finance.</p>
+    <div class="ff-field">
+      <label for="ff-user">Usuario</label>
+      <input id="ff-user" type="text" autocomplete="username" required>
+    </div>
+    <div class="ff-field">
+      <label for="ff-pass">Contraseña</label>
+      <input id="ff-pass" type="password" autocomplete="current-password" required>
+    </div>
+    <button class="ff-login-button" type="submit">INGRESAR →</button>
+    <div id="ff-login-error"></div>
+    <div class="ff-login-foot">Future Finance · Cohorte 2026</div>
+  </form>
+</div>
+
+<nav><div class="wrap nav"><a class="brand" href="https://drive.google.com/drive/folders/10W_eKpP6iRSick_EvKk_JkjAaz6sRVm5"><b>+</b><span>Future Finance</span></a><div class="links"><a href="#encuentros">Encuentros</a><a href="#participantes">Participantes</a><a href="#menti">Menti</a><a href="#materiales">Materiales</a></div><div class="logos"><img alt="Universidad de San Andrés · AMBA · +Partners" src="data:image/png;base64,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3btw4cLJkydfddVVycnJZrOZiBwOx8GDBz/66KPCwkJ/4aKionXr1vXp00c1e7ThFms0Gjt27Gg0Guvq6hITE3U63dNPP3333Xd7vd7PP/988+bN/pImk+nuu+++4oorVBljNpt79OhxrmoNBsPEiROvvPLK0NDQioqKZcuW7dixI7BAU1PT4sWLx44dq97VdevWvf/++4ECRhTF2267bfr06YmJiXq9vrGxMS8v76233tq1a5e/zO7du99///1XX321bT8CxlhERERycrLT6eScp6amSpK0b9++mpqawGKjRo3685//rCZyrK6uPnTo0KJFi2RZfuONN3r37t1G/b8KFypj9Hq96iIcFBT010ceiYqMfHXePKfTGRYa2tTYGB4Z+ejjf+vdp48azhJIRmbmXx+ZHRYWBgD79u3bumXLPffeGxwcPGzYsFl33/XOG2+2WP2EhYfPvG1mg73+26XfVFdWpaSmGIzGBx56sEePnmazCRFDQ0Nb7aHP58s5qmrqMDCLvkqg/9jlJj8//9jRY7169z544AAAbNm85U8zZpzdpd8Rq9V61dhxo0aPat++/e8SpsBIANARgeI1yD7B5yFSiLjCBIXLPDG+/X6wAfDmf5C7XR7ZBzojAcoIBkQFmUQcGVmRG5DMyAUUUAAjoDUquKvADLKsQ0EG7gUin9Lk8drJwjn4GOqJxIigJLMh3udp4lxCACYIRDq3h4hUYz8HlAAFQAIExrgCBAJxBCAGTM+5IjIIjTT27JOcn1UmNSmoCCjoAdFW7bDZXNaQUEJAIEBCAi4DQ73PS1wh2UccGHIgxWsQzdZgk73WBqAHFGROjR63rPwWMoZzfttttwXaIeCMG5L/oyRJDz744HkfXb+nVuBBSZIaGxvPXmdbrdbnnnsu0DBuMBieeuqpqVOnpqamhoaGBjY3aNCgiIiIxx57zN8rItq6devDDz98LtM6AOj1+hkzZtx9990RERGqC6s6do0cORIAGhsbt23bFlhep9MNHTp0ypQpcI6QID+I+Oijjz7wwAMRERGiKPp8vmuuuWbmzJmBYkZRlOPHj7vdbrPZ7PP5XnvtNdsvA8ynTp06b948NcejSrdu3RITE++///7Dhw+rR3w+36ZNm3JyclRp12qXYmJi5syZM2bMmNDQUFmWFUUJDQ11uVx2u73FIub666+fNGmS/8YO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"></div></div></nav>
+<main id="top">
+<header class="wrap hero"><div class="eyebrow">Programa Future Finance · 1ª edición · 2026</div><h1>FUTURE<br>FINANCE</h1><p class="lead">Mirar el entorno. Decidir adentro.</p>
+<div class="quick">
+<a href="#encuentros"><small>01</small><strong>Encuentros ↗</strong></a>
+<a href="#participantes"><small>02</small><strong>Participantes ↗</strong></a>
+<a href="#menti"><small>03</small><strong>Menti + tendencias ↗</strong></a>
+<a href="#materiales"><small>04</small><strong>Materiales ↗</strong></a>
+</div></header>
+
+
+<section id="encuentros"><div class="wrap">
+<div class="head"><div><div class="eyebrow">Recorrido · Septiembre — Octubre 2026</div><h2 style="margin-top:12px">Encuentros</h2></div>
+<div class="controls"><button class="arrow" onclick="slide(-1)">←</button><button class="arrow" onclick="slide(1)">→</button></div></div>
+
+<div class="carousel" id="carousel">
+<article class="meet" data-class="1"><b>18.09.26 · ONLINE</b><div class="num">01</div><h3>Señales y MacroTendencias</h3><p>9:00–10:25 · Módulo 1<br>10:35–12:00 · Módulo 2</p><div class="people">UdeSA, AMBA & +Partners · Ariel Urcola · Santiago Siri<br><br>Federico Merke · Miriam de Paoli · +Partners</div><button class="sumlink summary-btn" onclick="openSummary(1)">Ver resumen de la clase ↓</button></article>
+
+<article class="meet" data-class="2"><b>25.09.26 · ONLINE</b><div class="num">02</div><h3>Open Finance & Green Finance</h3><p>9:00–10:25 · Open Finance<br>10:35–12:00 · Green Finance</p><div class="people">Ángel Sierra · Fernanda Laranja · Matheus Roeber<br><br>Diego Flaiban · Matías Kelly</div><button class="sumlink summary-btn" onclick="openSummary(2)">Ver resumen de la clase ↓</button></article>
+
+<article class="meet current" data-class="3"><b>02.10.26 · ONLINE</b><div class="num">03</div><h3>La digitalización de los activos y la infraestructura</h3><p>9:00–10:25 · Infraestructura Financiera<br>10:35–12:00 · Activos Digitales</p><div class="people">Marcelo Franca · Gabriel Ayala · Hernán Corral<br><br>Manuel Beaudroit · Tassia Skoulade</div><button class="sumlink summary-btn" onclick="openSummary(3)">Ver resumen de la clase ↓</button></article>
+
+<article class="meet" data-class="4"><b>09.10.26 · ONLINE</b><div class="num">04</div><h3>Behavioral Economics e Inteligencia Artificial</h3><p>9:00–10:25 · Behavioral Economics<br>10:35–12:00 · Inteligencia Artificial</p><div class="people">Ol Beun · Facundo Corsi · Jorge Mahía<br><br>Fredi Vivas · Eduardo Vergara · Lucas Gonzalez</div><button class="sumlink summary-btn" onclick="openSummary(4)">Ver resumen de la clase ↓</button></article>
+
+<article class="meet" data-class="5"><b>16.10.26 · ONLINE</b><div class="num">05</div><h3>Foresight</h3><p>9:00–10:25 · El futuro del mundo<br>10:35–12:00 · El futuro de la industria financiera</p><div class="people">Alejandro Repetto · Mike Santos · Tomi Braun<br><br>Jesús Pérez · Persona a confirmar</div><button class="sumlink summary-btn" onclick="openSummary(5)">Ver resumen de la clase ↓</button></article>
+
+<article class="meet" data-class="6"><b>23.10.26 · PRESENCIAL / ONLINE</b><div class="num">06</div><h3>Future-Proof</h3><p>9:00–13:00 · Taller<br>13:00–14:00 · Almuerzo<br>14:00–16:00 · Cierre e invitados especiales</p><div class="people">Jornada de cierre · Future Proof</div><button class="sumlink summary-btn" onclick="openSummary(6)">Ver resumen de la clase ↓</button></article>
+</div>
+
+<div id="summary-panel" class="summary-panel">
+  <button class="summary-close" onclick="closeSummary()" aria-label="Cerrar">×</button>
+  <div id="summary-content"></div>
+</div>
+</div></section>
+
+
+<section id="participantes"><div class="wrap">
+<div class="head"><h2>Participantes</h2><p class="desc">23 participantes de 5 países. Conocé quiénes forman parte de la primera cohorte de Future Finance, su rol y organización.</p></div>
+<div class="student-cards"><article class="student-card">
+      <div class="student-top"><div class="student-initial">A</div>
+      <a class="linkedin" href="https://py.linkedin.com/in/alberto-acosta-rodriguez-606929178" target="_blank" rel="noopener" aria-label="LinkedIn de Alberto Acosta Rodríguez">in</a></div>
+      <h3>Alberto Acosta Rodríguez</h3>
+      <p class="role">Gerente de Operaciones</p>
+      <p class="company">Banco Familiar</p>
+    </article>
+<article class="student-card">
+      <div class="student-top"><div class="student-initial">G</div>
+      <a class="linkedin" href="https://www.linkedin.com/search/results/people/?keywords=Gustavo%20Cort%C3%A9s%20Importadora%20Sudamericana" target="_blank" rel="noopener" aria-label="LinkedIn de Gustavo Cortés">in</a></div>
+      <h3>Gustavo Cortés</h3>
+      <p class="role">Gerente de Finanzas</p>
+      <p class="company">Importadora Sudamericana</p>
+    </article>
+<article class="student-card">
+      <div class="student-top"><div class="student-initial">C</div>
+      <a class="linkedin" href="https://pe.linkedin.com/in/carlosferreyros" target="_blank" rel="noopener" aria-label="LinkedIn de Carlos Ferreyros">in</a></div>
+      <h3>Carlos Ferreyros</h3>
+      <p class="role">CEO &amp; Co-Founder</p>
+      <p class="company">Prestamype</p>
+    </article>
+<article class="student-card">
+      <div class="student-top"><div class="student-initial">S</div>
+      <a class="linkedin" href="https://ar.linkedin.com/in/sebastian-ferro/es" target="_blank" rel="noopener" aria-label="LinkedIn de Sebastián Ferro">in</a></div>
+      <h3>Sebastián Ferro</h3>
+      <p class="role">Presidente de Primary y Group CEO</p>
+      <p class="company">A3 Mercados</p>
+    </article>
+<article class="student-card">
+      <div class="student-top"><div class="student-initial">I</div>
+      <a class="linkedin" href="https://www.linkedin.com/search/results/people/?keywords=Ignacio%20Fessler%20BROU" target="_blank" rel="noopener" aria-label="LinkedIn de Ignacio Fessler">in</a></div>
+      <h3>Ignacio Fessler</h3>
+      <p class="role">Director</p>
+      <p class="company">BROU</p>
+    </article>
+<article class="student-card">
+      <div class="student-top"><div class="student-initial">M</div>
+      <a class="linkedin" href="https://ar.linkedin.com/in/melina-freiria" target="_blank" rel="noopener" aria-label="LinkedIn de Melina Freiria">in</a></div>
+      <h3>Melina Freiria</h3>
+      <p class="role">CCO</p>
+      <p class="company">Banco Hipotecario</p>
+    </article>
+<article class="student-card">
+      <div class="student-top"><div class="student-initial">C</div>
+      <a class="linkedin" href="https://www.linkedin.com/search/results/people/?keywords=Carina%20Gissel%20Garcia%20Bartell%20LACNIC" target="_blank" rel="noopener" aria-label="LinkedIn de Carina Gissel Garcia Bartell">in</a></div>
+      <h3>Carina Gissel Garcia Bartell</h3>
+      <p class="role">Líder de Administración y Finanzas</p>
+      <p class="company">LACNIC</p>
+    </article>
+<article class="student-card">
+      <div class="student-top"><div class="student-initial">S</div>
+      <a class="linkedin" href="https://www.linkedin.com/search/results/people/?keywords=Sebasti%C3%A1n%20Gimenez%20Banco%20Familiar" target="_blank" rel="noopener" aria-label="LinkedIn de Sebastián Gimenez">in</a></div>
+      <h3>Sebastián Gimenez</h3>
+      <p class="role">Gerente de Finanzas</p>
+      <p class="company">Banco Familiar</p>
+    </article>
+<article class="student-card">
+      <div class="student-top"><div class="student-initial">R</div>
+      <a class="linkedin" href="https://www.linkedin.com/search/results/people/?keywords=Rogelio%20Gibaut%20Independiente" target="_blank" rel="noopener" aria-label="LinkedIn de Rogelio Gibaut">in</a></div>
+      <h3>Rogelio Gibaut</h3>
+      <p class="role">Ejecutivo Senior de Finanzas</p>
+      <p class="company">Independiente</p>
+    </article>
+<article class="student-card">
+      <div class="student-top"><div class="student-initial">M</div>
+      <a class="linkedin" href="https://ar.linkedin.com/in/margarita-hamwee-a1292314" target="_blank" rel="noopener" aria-label="LinkedIn de Margarita Hamwee">in</a></div>
+      <h3>Margarita Hamwee</h3>
+      <p class="role">Gerente de Transformación y Tecnología</p>
+      <p class="company">Banco Mariva</p>
+    </article>
+<article class="student-card">
+      <div class="student-top"><div class="student-initial">C</div>
+      <a class="linkedin" href="https://pe.linkedin.com/in/cesar-javier-herrera-santos-45536694" target="_blank" rel="noopener" aria-label="LinkedIn de Cesar Javier Herrera Santos">in</a></div>
+      <h3>Cesar Javier Herrera Santos</h3>
+      <p class="role">Gerente de Negocio y Producto</p>
+      <p class="company">Prestamype</p>
+    </article>
+<article class="student-card">
+      <div class="student-top"><div class="student-initial">B</div>
+      <a class="linkedin" href="https://www.linkedin.com/search/results/people/?keywords=Bego%C3%B1a%20Inurritegui%20Burga-Cisneros%20Prestamype" target="_blank" rel="noopener" aria-label="LinkedIn de Begoña Inurritegui Burga-Cisneros">in</a></div>
+      <h3>Begoña Inurritegui Burga-Cisneros</h3>
+      <p class="role">Gerente de Estrategia</p>
+      <p class="company">Prestamype</p>
+    </article>
+<article class="student-card">
+      <div class="student-top"><div class="student-initial">A</div>
+      <a class="linkedin" href="https://www.linkedin.com/search/results/people/?keywords=Alejandro%20Laufer%20Banco%20Familiar" target="_blank" rel="noopener" aria-label="LinkedIn de Alejandro Laufer">in</a></div>
+      <h3>Alejandro Laufer</h3>
+      <p class="role">Vicepresidente Segundo</p>
+      <p class="company">Banco Familiar</p>
+    </article>
+<article class="student-card">
+      <div class="student-top"><div class="student-initial">L</div>
+      <a class="linkedin" href="https://ar.linkedin.com/in/leanmarti" target="_blank" rel="noopener" aria-label="LinkedIn de Leandro Martinez">in</a></div>
+      <h3>Leandro Martinez</h3>
+      <p class="role">Subgerente General del Área de Finanzas</p>
+      <p class="company">Banco Provincia</p>
+    </article>
+<article class="student-card">
+      <div class="student-top"><div class="student-initial">C</div>
+      <a class="linkedin" href="https://uy.linkedin.com/in/carlomacchi" target="_blank" rel="noopener" aria-label="LinkedIn de Carlo Macchi">in</a></div>
+      <h3>Carlo Macchi</h3>
+      <p class="role">CEO</p>
+      <p class="company">Quaris</p>
+    </article>
+<article class="student-card">
+      <div class="student-top"><div class="student-initial">J</div>
+      <a class="linkedin" href="https://www.linkedin.com/search/results/people/?keywords=Juan%20Miller%20Naranja%20X" target="_blank" rel="noopener" aria-label="LinkedIn de Juan Miller">in</a></div>
+      <h3>Juan Miller</h3>
+      <p class="role">Head of Strategy, Growth and New Business</p>
+      <p class="company">Naranja X</p>
+    </article>
+<article class="student-card">
+      <div class="student-top"><div class="student-initial">A</div>
+      <a class="linkedin" href="https://www.linkedin.com/search/results/people/?keywords=Alan%20Dar%C3%ADo%20Mu%C3%B1oz%20Mej%C3%ADa%20Banco%20Fihogar" target="_blank" rel="noopener" aria-label="LinkedIn de Alan Darío Muñoz Mejía">in</a></div>
+      <h3>Alan Darío Muñoz Mejía</h3>
+      <p class="role">Presidente</p>
+      <p class="company">Banco Fihogar</p>
+    </article>
+<article class="student-card">
+      <div class="student-top"><div class="student-initial">G</div>
+      <a class="linkedin" href="https://www.linkedin.com/search/results/people/?keywords=Gloria%20Ortega%20Banco%20Familiar" target="_blank" rel="noopener" aria-label="LinkedIn de Gloria Ortega">in</a></div>
+      <h3>Gloria Ortega</h3>
+      <p class="role">Directora</p>
+      <p class="company">Banco Familiar</p>
+    </article>
+<article class="student-card">
+      <div class="student-top"><div class="student-initial">M</div>
+      <a class="linkedin" href="https://www.linkedin.com/search/results/people/?keywords=Mat%C3%ADas%20Pablo%20Pizarro%20PeyPe" target="_blank" rel="noopener" aria-label="LinkedIn de Matías Pablo Pizarro">in</a></div>
+      <h3>Matías Pablo Pizarro</h3>
+      <p class="role">CTO &amp; Co-Founder</p>
+      <p class="company">PeyPe</p>
+    </article>
+<article class="student-card">
+      <div class="student-top"><div class="student-initial">D</div>
+      <a class="linkedin" href="https://www.linkedin.com/search/results/people/?keywords=Diego%20Eduardo%20Pizarro%20PeyPe" target="_blank" rel="noopener" aria-label="LinkedIn de Diego Eduardo Pizarro">in</a></div>
+      <h3>Diego Eduardo Pizarro</h3>
+      <p class="role">CEO &amp; Co-Founder</p>
+      <p class="company">PeyPe</p>
+    </article>
+<article class="student-card">
+      <div class="student-top"><div class="student-initial">J</div>
+      <a class="linkedin" href="https://www.linkedin.com/search/results/people/?keywords=Juan%20Cruz%20Pizarro%20PeyPe" target="_blank" rel="noopener" aria-label="LinkedIn de Juan Cruz Pizarro">in</a></div>
+      <h3>Juan Cruz Pizarro</h3>
+      <p class="role">Head de Expansión Internacional</p>
+      <p class="company">PeyPe</p>
+    </article>
+<article class="student-card">
+      <div class="student-top"><div class="student-initial">M</div>
+      <a class="linkedin" href="https://www.linkedin.com/search/results/people/?keywords=Marco%20Trappa%20Grupo%20V%C3%ADa%20Bariloche" target="_blank" rel="noopener" aria-label="LinkedIn de Marco Trappa">in</a></div>
+      <h3>Marco Trappa</h3>
+      <p class="role">Director</p>
+      <p class="company">Grupo Vía Bariloche</p>
+    </article>
+</div>
+</div></section>
+
+<section id="menti"><div class="wrap"><div class="menti"><div><div class="eyebrow">Radar colectivo</div><h3>Radar Colectivo</h3><p>Un espacio vivo para sumar tendencias, señales, incertidumbres y preguntas a medida que avanza el programa.</p><a class="btn" target="_blank" rel="noopener" href="https://www.menti.com/al6fxaarma5b">Dejá acá las señales e incertidumbres que vas identificando ↗</a></div><div class="radar"><div class="trend">AI agentic</div><div class="trend">Nueva arquitectura del dinero</div><div class="trend">Open Finance</div><div class="trend">Demografía</div><div class="trend">Geopolítica</div><div class="trend">Sostenibilidad</div></div></div></div></section>
+
+<section id="materiales"><div class="wrap"><div class="head"><h2>Materiales</h2><p class="desc">Biblioteca compartida del programa para consultar y sumar documentación.</p></div><div class="materials">
+<article class="material"><div>↗</div><h3>Presentaciones</h3><p>Presentaciones de las clases y materiales compartidos. La carpeta permite centralizar también nuevos aportes.</p><a target="_blank" rel="noopener" href="https://drive.google.com/drive/folders/10W_eKpP6iRSick_EvKk_JkjAaz6sRVm5">Abrir Google Drive →</a></article>
+<article class="repository">
+<div>
+  <div class="eyebrow">Reservorio colectivo</div>
+  <h3>Lecturas, ideas y señales para compartir</h3>
+  <p>Un espacio construido entre todos para sumar artículos, informes, papers, videos, podcasts y otros materiales que ayuden a ampliar las conversaciones de Future Finance.</p>
+</div>
+<div class="repository-actions">
+  <a class="primary" target="_blank" rel="noopener" href="https://forms.gle/zyagQtn5vGpBCy5Z8">+ SUMAR UN RECURSO</a>
+  <a class="secondary" target="_blank" rel="noopener" href="https://drive.google.com/drive/folders/1JSHxkIo9y74Z3cyxFJ7SKK6dh7T9Y2fO">EXPLORAR RESERVORIO →</a>
+</div>
+<div class="repository-tags">
+<span>Macrotendencias y señales</span><span>Geopolítica</span><span>Demografía y longevidad</span>
+<span>Sostenibilidad / Green Finance</span><span>Open Finance</span><span>Infraestructura financiera / BaaS</span>
+<span>Pagos</span><span>Stablecoins y Cripto</span><span>Tokenización / RWA</span>
+<span>Behavioral Economics</span><span>Inteligencia Artificial</span><span>Foresight y escenarios</span>
+<span>Future-Proof / Estrategia</span><span>Otros</span>
+</div>
+</article>
+<article class="material"><div>+</div><h3>Documentos</h3><p>Roadmap, consignas, briefs y documentación general de Future Finance.</p><a target="_blank" rel="noopener" href="https://drive.google.com/drive/folders/10W_eKpP6iRSick_EvKk_JkjAaz6sRVm5">Abrir documentos →</a></article>
+</div></div></section>
+</main>
+<footer><div class="wrap"><b style="color:#111">Future Finance 2026</b> · Universidad de San Andrés · AMBA · +Partners</div></footer>
+
+<script>
+function slide(d){document.getElementById('carousel').scrollBy({left:d*Math.min(innerWidth*.7,460),behavior:'smooth'})}
+function placeholder(name){alert(name+' — link a incorporar.');return false;}
+
+const summaries = {
+  1:{title:"Señales y MacroTendencias", status:"ready"},
+  2:{title:"Open Finance & Green Finance", status:"ready"},
+  3:{title:"La digitalización de los activos y la infraestructura", status:"ready"},
+  4:{title:"Behavioral Economics e Inteligencia Artificial", intro:"El resumen se habilitará después del encuentro del 9 de octubre.", status:"future"},
+  5:{title:"Foresight", intro:"El resumen se habilitará después del encuentro del 16 de octubre.", status:"future"},
+  6:{title:"Future-Proof", intro:"El resumen se habilitará después de la jornada de cierre del 23 de octubre.", status:"future"}
+};
+
+function classOneSummary(){
+  return `<div class="summary-kicker">Clase 01 · 18.09.26</div>
+    <h3>Señales y MacroTendencias</h3>
+
+    <div class="class-lead">
+      <b>Idea central de la clase</b>
+      <p>Antes de hablar del futuro de las finanzas, ampliamos la mirada. La primera clase puso el foco en cuatro fuerzas que están transformando el contexto en el que operará la industria financiera: tecnología e IA, reconfiguración geopolítica, transición energética y nuevas demografías.</p>
+    </div>
+
+    <div class="forces-title">4 fuerzas que están cambiando el contexto</div>
+    <div class="forces-grid">
+      <div class="force-card"><div class="force-head"><span class="force-num">01</span><span class="force-icon">⌘</span></div><h4>Tecnología e IA</h4><p>La IA no aparece sólo como una nueva herramienta, sino como una tecnología capaz de modificar cómo trabajamos, decidimos e interactuamos. Agentes autónomos y nuevas interfaces anticipan un escenario que va mucho más allá del chatbot.</p></div>
+      <div class="force-card"><div class="force-head"><span class="force-num">02</span><span class="force-icon">◎</span></div><h4>Geopolítica</h4><p>El centro de gravedad global se está desplazando. El ascenso de China, las tensiones entre Oriente y Occidente y la creciente fragmentación obligan a mirar más allá de la urgencia local y entender cómo estas dinámicas afectan a la región y al sistema financiero.</p></div>
+      <div class="force-card"><div class="force-head"><span class="force-num">03</span><span class="force-icon">↗</span></div><h4>Transición energética</h4><p>Las renovables continúan avanzando más allá de los cambios políticos, también por costo, competitividad y seguridad energética. La energía se convierte en una cuestión económica y geopolítica, con implicancias directas para el financiamiento y la inversión.</p></div>
+      <div class="force-card"><div class="force-head"><span class="force-num">04</span><span class="force-icon">◌</span></div><h4>Nuevas demografías</h4><p>Nacemos menos y vivimos más. El envejecimiento poblacional cambia el mercado laboral, el consumo, los sistemas previsionales y quién concentra el patrimonio. Para las finanzas, esto abre oportunidades en ahorro, crédito, seguros y experiencias diseñadas para vidas más largas.</p></div>
+    </div>
+
+    <div class="ff-meaning">
+      <div class="meaning-mark">!</div>
+      <div><div class="meaning-title">¿Qué significa esto para Future Finance?</div>
+      <p>No alcanza con extrapolar el sistema financiero actual incorporándole nuevas tecnologías. Cambian simultáneamente los clientes, el trabajo, la distribución del poder global, la energía y las instituciones. Pensar las finanzas del futuro exige conectar lo que sucede dentro de la industria con transformaciones que están ocurriendo fuera de ella.</p></div>
+    </div>
+
+    <div class="questions-title">Preguntas que nos llevamos</div>
+    <div class="question-grid">
+      <div class="question-card"><span>01</span><p>¿Estamos mirando suficientemente fuera de nuestra industria para detectar las señales que pueden cambiar nuestro negocio?</p></div>
+      <div class="question-card"><span>02</span><p>¿Qué decisiones tomaríamos distinto hoy si diseñáramos productos para personas que van a vivir 90 o 100 años?</p></div>
+      <div class="question-card"><span>03</span><p>¿La IA será principalmente una herramienta de eficiencia o terminará cambiando la arquitectura misma de las organizaciones?</p></div>
+      <div class="question-card"><span>04</span><p>¿Cómo impactarán la fragmentación geopolítica y la transición energética sobre el dinero, los pagos, la inversión y el financiamiento?</p></div>
+    </div>
+
+    <div class="closing-question"><span>→</span><b>¿Estamos construyendo soluciones para el mundo que viene o seguimos optimizando soluciones para un mundo que está dejando de existir?</b></div>
+
+    <div class="experts-title">Expertos invitados</div>
+    <div class="experts-grid">
+      <div class="expert"><span>AU</span><div><b>Ariel Urcola</b><small>Complejidad y macrotendencias</small></div></div>
+      <div class="expert"><span>SS</span><div><b>Santiago Siri</b><small>Tecnología, IA y humanidad</small></div></div>
+      <div class="expert"><span>FM</span><div><b>Federico Merke</b><small>Geopolítica y transición energética</small></div></div>
+      <div class="expert"><span>MD</span><div><b>Miriam de Paoli</b><small>Demografía y longevidad</small></div></div>
+    </div>`;
+}
+
+
+function classTwoSummary(){
+  return `<div class="summary-kicker">Clase 02 · 25.09.26</div>
+    <h3>Open Finance & Green Finance</h3>
+    <div class="class-lead">
+      <b>Idea central de la clase</b>
+      <p>La segunda clase bajó dos macrotendencias a la realidad de la industria: cómo Open Finance convierte datos y servicios financieros en infraestructura para crear mejores experiencias, y cómo las finanzas sostenibles empiezan a incorporar impacto, riesgo climático y nuevas fuentes de capital en las decisiones financieras.</p>
+    </div>
+    <div class="forces-title">2 transformaciones que empiezan a cambiar las finanzas</div>
+    <div class="forces-grid class2-forces">
+      <div class="force-card"><div class="force-head"><span class="force-num">01</span><span class="force-icon">↔</span></div><h4>Open Finance</h4><p>El cliente pasa a ser dueño y protagonista de sus datos. Con consentimiento, APIs estandarizadas y servicios como iniciación de pagos, la información puede moverse entre instituciones para reducir asimetrías, aumentar competencia y construir propuestas más relevantes.</p><div class="signal-tags"><span>Consentimiento y control</span><span>Datos + pagos + servicios</span><span>Brasil como referencia</span></div></div>
+      <div class="force-card"><div class="force-head"><span class="force-num">02</span><span class="force-icon">↗</span></div><h4>Green & Impact Finance</h4><p>La sostenibilidad empieza a integrarse al negocio financiero: bonos temáticos, riesgo climático, métricas de impacto y financiamiento a proyectos ambientales y sociales. El desafío ya no es sólo declarar intención, sino estructurar activos, medir resultados y evitar greenwashing.</p><div class="signal-tags"><span>Capital orientado a impacto</span><span>Riesgo climático</span><span>Métricas creíbles</span></div></div>
+    </div>
+    <div class="ff-meaning"><div class="meaning-mark">!</div><div><div class="meaning-title">¿Qué significa esto para Future Finance?</div><p>En ambos casos, la infraestructura por sí sola no alcanza. Open Finance genera valor cuando los datos se convierten en mejores decisiones, crédito, pagos y experiencias. Green Finance escala cuando el impacto se vuelve financiable, medible y parte de la gestión de riesgo.</p></div></div>
+    <div class="questions-title">Señales que dejó la clase</div>
+    <div class="question-grid">
+      <div class="question-card"><span>01</span><p>Open Finance evoluciona de compartir datos a compartir también servicios: pagos, portabilidad y experiencias integradas.</p></div>
+      <div class="question-card"><span>02</span><p>Los datos autorizados abren espacio para ofertas de crédito más adecuadas y una visión financiera más completa del cliente.</p></div>
+      <div class="question-card"><span>03</span><p>Las finanzas sostenibles ganan productos, métricas y gobernanza; el riesgo climático empieza a entrar en decisiones financieras.</p></div>
+      <div class="question-card"><span>04</span><p>El cuello de botella del impacto no es sólo el capital: faltan proyectos estructurados, activos financiables e indicadores creíbles.</p></div>
+    </div>
+    <div class="closing-question"><span>→</span><b>¿Qué cambia cuando los datos y el impacto dejan de ser información complementaria y pasan a formar parte del corazón de las decisiones financieras?</b></div>
+    <div class="experts-title">Expertos invitados</div>
+    <div class="experts-grid class2-experts">
+      <div class="expert"><span>AS</span><div><b>Ángel Sierra</b><small>Open Finance en Latinoamérica</small></div></div>
+      <div class="expert"><span>MR</span><div><b>Matheus Roeber</b><small>Banco Central do Brasil</small></div></div>
+      <div class="expert"><span>FL</span><div><b>Fernanda Laranja</b><small>Mercado Pago</small></div></div>
+      <div class="expert"><span>DF</span><div><b>Diego Flaiban</b><small>Finanzas sostenibles</small></div></div>
+      <div class="expert"><span>MK</span><div><b>Matías Kelly</b><small>Finanzas de impacto</small></div></div>
+    </div>`;
+}
+
+
+function classThreeSummary(){
+  return `<div class="summary-kicker">Clase 03 · 02.10.26</div>
+    <h3>La digitalización de los activos y la infraestructura</h3>
+
+    <div class="class-lead">
+      <b>Idea central de la clase</b>
+      <p>La infraestructura financiera se está volviendo modular, programable y cada vez más invisible. Al mismo tiempo, stablecoins y tokenización empiezan a conectar el mundo financiero tradicional con nuevos rieles digitales. La frontera entre banca, pagos y activos digitales se vuelve cada vez menos nítida.</p>
+    </div>
+
+    <div class="forces-title">2 transformaciones que empiezan a converger</div>
+    <div class="forces-grid class2-forces">
+      <div class="force-card">
+        <div class="force-head"><span class="force-num">01</span><span class="force-icon">⌘</span></div>
+        <h4>Infraestructura financiera</h4>
+        <p>Banking as a Service, APIs y nuevos proveedores desacoplan la experiencia financiera de la infraestructura que la soporta. El valor se desplaza de construir todo internamente a combinar licencias, tecnología y rieles para lanzar productos con mayor velocidad.</p>
+        <div class="signal-tags"><span>BaaS + APIs</span><span>Pagos multirriel</span><span>Pagos agénticos</span></div>
+      </div>
+      <div class="force-card">
+        <div class="force-head"><span class="force-num">02</span><span class="force-icon">◈</span></div>
+        <h4>Activos digitales</h4>
+        <p>Stablecoins dejan de ser sólo una puerta de entrada a cripto y aparecen como infraestructura para dólares digitales, pagos cross-border y liquidación. La tokenización lleva activos del mundo real a formatos más programables, fraccionables y eficientes.</p>
+        <div class="signal-tags"><span>Stablecoins</span><span>Tokenización / RWA</span><span>Cripto en la vida diaria</span></div>
+      </div>
+    </div>
+
+    <div class="ff-meaning">
+      <div class="meaning-mark">!</div>
+      <div><div class="meaning-title">¿Qué significa esto para Future Finance?</div>
+      <p>La discusión ya no es solamente banco versus fintech o finanzas tradicionales versus cripto. Distintas infraestructuras empiezan a convivir: tarjetas, pagos cuenta a cuenta, stablecoins y activos tokenizados. La ventaja puede estar en quién logre orquestarlas de forma simple para el usuario.</p></div>
+    </div>
+
+    <div class="questions-title">Señales que dejó la clase</div>
+    <div class="question-grid">
+      <div class="question-card"><span>01</span><p>La infraestructura se modulariza: licencias, core, pagos y crédito pueden consumirse como servicios.</p></div>
+      <div class="question-card"><span>02</span><p>Los pagos se vuelven multirriel: tarjetas, pagos instantáneos y stablecoins empiezan a convivir.</p></div>
+      <div class="question-card"><span>03</span><p>Stablecoins encuentran casos concretos en reserva de valor, cross-border y liquidación B2B.</p></div>
+      <div class="question-card"><span>04</span><p>La tokenización acerca activos reales a infraestructuras digitales y reduce fricciones de emisión y distribución.</p></div>
+    </div>
+
+    <div class="questions-title">Preguntas que nos llevamos</div>
+    <div class="question-grid">
+      <div class="question-card"><span>01</span><p>¿Qué parte de la infraestructura financiera seguirá siendo una ventaja propia y qué parte se convertirá en un commodity?</p></div>
+      <div class="question-card"><span>02</span><p>¿Qué cambia para bancos y fintechs cuando el cliente puede moverse entre distintos rieles de pago casi sin percibirlos?</p></div>
+      <div class="question-card"><span>03</span><p>¿Hasta dónde las stablecoins van a volverse domésticas y formar parte de experiencias financieras cotidianas?</p></div>
+      <div class="question-card"><span>04</span><p>¿Qué activos serán los primeros en tokenizarse de forma masiva y qué intermediarios seguirán siendo necesarios?</p></div>
+    </div>
+
+    <div class="closing-question"><span>→</span><b>¿Qué pasa con la banca cuando la infraestructura deja de ser el límite y el dinero, los pagos y los activos empiezan a moverse sobre múltiples rieles programables?</b></div>
+
+    <div class="experts-title">Expertos invitados</div>
+    <div class="experts-grid class2-experts">
+      <div class="expert"><span>MF</span><div><b>Marcelo Franca</b><small>Celcoin · Infraestructura / BaaS</small></div></div>
+      <div class="expert"><span>GA</span><div><b>Gabriel Ayala</b><small>Bit2Me · APIs para bancos y fintechs</small></div></div>
+      <div class="expert"><span>HC</span><div><b>Hernán Corral</b><small>Pomelo · Nueva infraestructura de pagos</small></div></div>
+      <div class="expert"><span>MB</span><div><b>Manuel Beaudroit</b><small>Belo · Stablecoins y uso cotidiano</small></div></div>
+      <div class="expert"><span>TS</span><div><b>Tassia Skoulade</b><small>Mercado Bitcoin · Tokenización / RWA</small></div></div>
+    </div>`;
+}
+
+function openSummary(n){
+  const x=summaries[n], panel=document.getElementById('summary-panel'), c=document.getElementById('summary-content');
+  if(n===1){
+    c.innerHTML=classOneSummary();
+  } else if(n===2){
+    c.innerHTML=classTwoSummary();
+  } else if(n===3){
+    c.innerHTML=classThreeSummary();
+  } else {
+    const placeholder = x.status==="future" ? "Disponible después de la clase." : "Contenido a incorporar desde el transcript de la clase.";
+    c.innerHTML=`<div class="summary-kicker">Clase ${String(n).padStart(2,'0')} · Resumen</div>
+      <h3>${x.title}</h3><p class="summary-intro">${x.intro}</p>
+      <div class="summary-grid">
+        <div class="summary-block"><b>01 · Resumen ejecutivo</b><p class="summary-placeholder">${placeholder}</p></div>
+        <div class="summary-block"><b>02 · Tendencias & señales</b><p class="summary-placeholder">${placeholder}</p></div>
+        <div class="summary-block"><b>03 · Incertidumbres</b><p class="summary-placeholder">${placeholder}</p></div>
+        <div class="summary-block"><b>04 · Preguntas que quedan abiertas</b><p class="summary-placeholder">${placeholder}</p></div>
+      </div>`;
+  }
+  panel.classList.add('open');
+  setTimeout(()=>panel.scrollIntoView({behavior:'smooth',block:'nearest'}),50);
+}
+function closeSummary(){document.getElementById('summary-panel').classList.remove('open')}
+</script>
+
+
+<style>
+.summary-btn{border:0;background:transparent;padding:0;text-align:left;cursor:pointer;color:inherit}
+.summary-panel{display:none;margin-top:18px;background:#fff;border:1px solid var(--line);border-radius:24px;padding:34px;position:relative;animation:reveal .25s ease}
+.summary-panel.open{display:block}
+.summary-close{position:absolute;right:20px;top:18px;width:36px;height:36px;border:1px solid var(--line);border-radius:50%;background:#fff;font-size:22px;cursor:pointer}
+.summary-kicker{font-size:11px;font-weight:850;letter-spacing:.12em;text-transform:uppercase;color:#777b82}
+.summary-panel h3{font-size:34px;letter-spacing:-.045em;margin:9px 45px 8px 0}
+.summary-intro{font-size:15px;line-height:1.65;color:#555a61;max-width:850px}
+.summary-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:28px}
+.summary-block{background:#f5f5f1;border-radius:16px;padding:18px;min-height:160px}
+.summary-block b{display:block;font-size:12px;text-transform:uppercase;letter-spacing:.08em;margin-bottom:12px}
+.summary-block p{font-size:13px;line-height:1.55;color:#60646a;margin:0}
+.summary-placeholder{font-style:italic;color:#8a8e94}
+@keyframes reveal{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:none}}
+@media(max-width:850px){.summary-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.summary-grid{grid-template-columns:1fr}.summary-panel{padding:24px 18px}.summary-panel h3{font-size:27px}}
+</style>
+
+
+
+<style>
+/* Formato estándar para resúmenes de clases */
+.class-lead{margin-top:24px;max-width:930px}
+.class-lead b,.forces-title,.questions-title,.experts-title{display:block;font-size:12px;font-weight:900;letter-spacing:.09em;text-transform:uppercase}
+.class-lead p{font-size:15px;line-height:1.6;color:#62676e;margin:6px 0 0}
+.forces-title,.questions-title,.experts-title{margin-top:30px}
+.forces-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:12px}
+.force-card{border:1px solid var(--line);border-radius:16px;padding:18px;background:#fff;min-height:245px}
+.force-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:22px}
+.force-num{font-size:12px;font-weight:900}
+.force-icon{width:38px;height:38px;border-radius:50%;background:var(--acid);display:grid;place-items:center;font-size:18px;font-weight:900}
+.force-card h4{font-size:18px;letter-spacing:-.035em;margin:0 0 9px}
+.force-card p{font-size:13px;line-height:1.5;color:#62676e;margin:0}
+.ff-meaning{margin-top:12px;background:#101217;color:#fff;border-radius:16px;padding:20px 24px;display:grid;grid-template-columns:50px 1fr;gap:16px;align-items:center}
+.meaning-mark{width:40px;height:40px;border:2px solid var(--acid);color:var(--acid);border-radius:50%;display:grid;place-items:center;font-size:20px;font-weight:900}
+.meaning-title{font-size:11px;font-weight:900;letter-spacing:.12em;text-transform:uppercase;margin-bottom:7px}
+.ff-meaning p{font-size:14px;line-height:1.55;margin:0;color:#f1f1ed}
+.question-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:10px}
+.question-card{background:#f7f7f3;border:1px solid var(--line);border-radius:14px;padding:15px;display:grid;grid-template-columns:34px 1fr;gap:10px;min-height:132px}
+.question-card span{width:30px;height:30px;border:1px solid #d9d9d3;border-radius:50%;display:grid;place-items:center;font-size:10px;font-weight:900}
+.question-card p{font-size:12px;line-height:1.45;margin:2px 0 0}
+.closing-question{margin-top:12px;background:var(--acid);border-radius:14px;padding:17px 20px;display:flex;align-items:center;gap:14px;font-size:16px;line-height:1.25}
+.closing-question span{width:34px;height:34px;border:1px solid #111;border-radius:50%;display:grid;place-items:center;flex:0 0 auto}
+.experts-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:12px}
+.expert{display:flex;align-items:center;gap:10px}
+.expert>span{width:42px;height:42px;border-radius:50%;background:#101217;color:var(--acid);display:grid;place-items:center;font-size:11px;font-weight:900;flex:0 0 auto}
+.expert b{display:block;font-size:13px}
+.expert small{display:block;font-size:11px;line-height:1.25;color:#697078;margin-top:2px}
+@media(max-width:900px){.forces-grid,.question-grid,.experts-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.forces-grid,.question-grid,.experts-grid{grid-template-columns:1fr}.force-card{min-height:auto}.ff-meaning{grid-template-columns:1fr}.closing-question{font-size:14px}}
+</style>
+
+<script>
+(function(){
+  if(sessionStorage.getItem("futureFinanceAccess")==="ok"){
+    document.addEventListener("DOMContentLoaded", function(){
+      document.getElementById("ff-login").classList.add("hidden");
+    });
+  }
+})();
+function ffLogin(e){
+  e.preventDefault();
+  const u=document.getElementById("ff-user").value;
+  const p=document.getElementById("ff-pass").value;
+  if(u==="FutureFinance" && p==="+Partners"){
+    sessionStorage.setItem("futureFinanceAccess","ok");
+    document.getElementById("ff-login").classList.add("hidden");
+    document.getElementById("ff-login-error").textContent="";
+  }else{
+    document.getElementById("ff-login-error").textContent="Usuario o contraseña incorrectos.";
+  }
+  return false;
+}
+</script>
+
+</body></html>
+<style>
+.quick{grid-template-columns:repeat(4,1fr)}
+.logos{display:flex;align-items:center;overflow:visible}
+.logos img{width:min(310px,36vw);height:auto;object-fit:contain;object-position:center;clip-path:none}
+.student-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.student-card{background:#fff;border:1px solid var(--line);border-radius:20px;padding:20px;min-height:205px;display:flex;flex-direction:column}
+.student-top{display:flex;justify-content:space-between;align-items:center}
+.student-initial{width:38px;height:38px;border-radius:50%;background:#101217;color:var(--acid);display:grid;place-items:center;font-weight:850}
+.linkedin{width:34px;height:34px;border-radius:50%;border:1px solid var(--line);display:grid;place-items:center;font-weight:850;font-family:Arial,sans-serif}
+.linkedin:hover{background:#101217;color:#fff}
+.student-card h3{font-size:18px;line-height:1.15;letter-spacing:-.025em;margin:24px 0 10px}
+.student-card .role{font-size:13px;line-height:1.4;color:var(--muted);margin:0 0 5px}
+.student-card .company{font-size:13px;font-weight:800;margin:auto 0 0;padding-top:14px}
+@media(max-width:850px){.quick{grid-template-columns:1fr 1fr}.student-cards{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.quick,.student-cards{grid-template-columns:1fr}.logos img{width:190px}}
+</style>
