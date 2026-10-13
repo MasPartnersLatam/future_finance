@@ -157,13 +157,13 @@ footer{border-top:1px solid var(--line);padding:45px 0 65px;color:var(--muted);f
 
 <article class="meet" data-class="2"><b>25.09.26 · ONLINE</b><div class="num">02</div><h3>Open Finance & Green Finance</h3><p>9:00–10:25 · Open Finance<br>10:35–12:00 · Green Finance</p><div class="people">Ángel Sierra · Fernanda Laranja · Matheus Roeber<br><br>Diego Flaiban · Matías Kelly</div><button class="sumlink summary-btn" onclick="openSummary(2)">Ver resumen de la clase ↓</button></article>
 
-<article class="meet current" data-class="3"><b>02.10.26 · ONLINE</b><div class="num">03</div><h3>La digitalización de los activos y la infraestructura</h3><p>9:00–10:25 · Infraestructura Financiera<br>10:35–12:00 · Activos Digitales</p><div class="people">Marcelo Franca · Gabriel Ayala · Hernán Corral<br><br>Manuel Beaudroit · Tassia Skoulade</div><button class="sumlink summary-btn" onclick="openSummary(3)">Ver resumen de la clase ↓</button></article>
+<article class="meet" data-class="3"><b>02.10.26 · ONLINE</b><div class="num">03</div><h3>La digitalización de los activos y la infraestructura</h3><p>9:00–10:25 · Infraestructura Financiera<br>10:35–12:00 · Activos Digitales</p><div class="people">Marcelo Franca · Gabriel Ayala · Hernán Corral<br><br>Manuel Beaudroit · Tassia Skoulade</div><button class="sumlink summary-btn" onclick="openSummary(3)">Ver resumen de la clase ↓</button></article>
 
-<article class="meet" data-class="4"><b>09.10.26 · ONLINE</b><div class="num">04</div><h3>Behavioral Economics e Inteligencia Artificial</h3><p>9:00–10:25 · Behavioral Economics<br>10:35–12:00 · Inteligencia Artificial</p><div class="people">Ol Beun · Facundo Corsi · Jorge Mahía<br><br>Fredi Vivas · Eduardo Vergara · Lucas Gonzalez</div><button class="sumlink summary-btn" onclick="openSummary(4)">Ver resumen de la clase ↓</button></article>
+<article class="meet" data-class="4"><b>09.10.26 · ONLINE</b><div class="num">04</div><h3>Behavioral Economics e Inteligencia Artificial</h3><p>Bloque 1 · Inteligencia Artificial<br>Bloque 2 · Behavioral Economics</p><div class="people">Kevin Canova · Eduardo Vergara<br><br>Ol Beun · Facundo Corsi · Jorge Mahía</div><button class="sumlink summary-btn" onclick="openSummary(4)">Ver resumen de la clase ↓</button></article>
 
 <article class="meet" data-class="5"><b>16.10.26 · ONLINE</b><div class="num">05</div><h3>Foresight</h3><p>9:00–10:25 · El futuro del mundo<br>10:35–12:00 · El futuro de la industria financiera</p><div class="people">Alejandro Repetto · Mike Santos · Tomi Braun<br><br>Jesús Pérez · Persona a confirmar</div><button class="sumlink summary-btn" onclick="openSummary(5)">Ver resumen de la clase ↓</button></article>
 
-<article class="meet" data-class="6"><b>23.10.26 · PRESENCIAL / ONLINE</b><div class="num">06</div><h3>Future-Proof</h3><p>9:00–13:00 · Taller<br>13:00–14:00 · Almuerzo<br>14:00–16:00 · Cierre e invitados especiales</p><div class="people">Jornada de cierre · Future Proof</div><button class="sumlink summary-btn" onclick="openSummary(6)">Ver resumen de la clase ↓</button></article>
+<article class="meet current" data-class="6"><b>23.10.26 · PRESENCIAL / ONLINE</b><div class="num">06</div><h3>Future-Proof</h3><p>9:00–13:00 · Taller<br>13:00–14:00 · Almuerzo<br>14:00–16:00 · Cierre e invitados especiales</p><div class="people">Jornada de cierre · Future Proof</div><button class="sumlink summary-btn" onclick="openSummary(6)">Ver resumen de la clase ↓</button></article>
 </div>
 
 <div id="summary-panel" class="summary-panel">
@@ -343,6 +343,12 @@ footer{border-top:1px solid var(--line);padding:45px 0 65px;color:var(--muted);f
 <footer><div class="wrap"><b style="color:#111">Future Finance 2026</b> · Universidad de San Andrés · AMBA · +Partners</div></footer>
 
 <script>
+window.addEventListener('load', function(){
+  const carousel=document.getElementById('carousel');
+  const next=carousel.querySelector('[data-class="6"]');
+  carousel.scrollLeft=next.offsetLeft-carousel.querySelector('.meet').offsetLeft;
+});
+
 function slide(d){document.getElementById('carousel').scrollBy({left:d*Math.min(innerWidth*.7,460),behavior:'smooth'})}
 function placeholder(name){alert(name+' — link a incorporar.');return false;}
 
@@ -350,7 +356,7 @@ const summaries = {
   1:{title:"Señales y MacroTendencias", status:"ready"},
   2:{title:"Open Finance & Green Finance", status:"ready"},
   3:{title:"La digitalización de los activos y la infraestructura", status:"ready"},
-  4:{title:"Behavioral Economics e Inteligencia Artificial", intro:"El resumen se habilitará después del encuentro del 9 de octubre.", status:"future"},
+  4:{title:"Behavioral Economics e Inteligencia Artificial", status:"ready"},
   5:{title:"Foresight", intro:"El resumen se habilitará después del encuentro del 16 de octubre.", status:"future"},
   6:{title:"Future-Proof", intro:"El resumen se habilitará después de la jornada de cierre del 23 de octubre.", status:"future"}
 };
@@ -489,6 +495,30 @@ function classThreeSummary(){
     </div>`;
 }
 
+function classFourSummary(){
+  return `<div class="summary-kicker">Clase 04 · 09.10.26</div><h3>Behavioral Economics e Inteligencia Artificial</h3>
+    <div class="class-lead"><b>Idea central de la clase</b><p>La inteligencia artificial empieza a actuar por nosotros y la ciencia del comportamiento ayuda a entender cómo decidimos. La clase conectó ambas miradas con un desafío para la industria financiera: definir qué problema resolver, cómo construir confianza y cómo diseñar productos que acompañen las decisiones y los hábitos reales de las personas.</p></div>
+    <div class="class-lead"><b>Bloque 1 · Inteligencia Artificial</b><p>Kevin Canova planteó una mirada sobre la evolución de la IA y los agentes, la delegación de decisiones y la necesidad de evaluar los resultados por el problema que resuelven. Eduardo Vergara llevó esa conversación a los pagos agénticos y a lo que está desarrollando Mastercard: qué cambia cuando un agente puede comprar y usar nuestro dinero, y qué condiciones de autorización, seguridad y confianza necesita el ecosistema.</p></div>
+    <div class="class-lead"><b>Bloque 2 · Behavioral Economics</b><p>Ol Beun introdujo la ciencia del comportamiento, los sesgos y un marco para diseñar experiencias simples, atractivas, sociales y oportunas. Facundo Corsi mostró cómo una misma transacción puede representar momentos distintos del vínculo con el cliente y por qué hay que comprobar las hipótesis antes de intervenir. Jorge Mahía compartió el caso de B100, del Grupo ABANCA, que conecta ahorro, salud personal y cuidado del planeta.</p></div>
+    <div class="forces-title">4 señales que conectan tecnología y comportamiento</div><div class="forces-grid">
+    <div class="force-card"><div class="force-head"><span class="force-num">01</span><span class="force-icon">⌘</span></div><h4>De asistir a actuar</h4><p>Los agentes amplían la posibilidad de delegar tareas y decisiones. El punto de partida es identificar el problema y evaluar el resultado obtenido, más allá de la herramienta o del contenido que produce.</p></div>
+    <div class="force-card"><div class="force-head"><span class="force-num">02</span><span class="force-icon">↗</span></div><h4>Pagos agénticos</h4><p>Cuando la IA compra por el usuario, la confianza también debe alcanzar a bancos, comercios y redes de pago. Autorización, límites y seguridad pasan a ser parte central de la experiencia.</p></div>
+    <div class="force-card"><div class="force-head"><span class="force-num">03</span><span class="force-icon">◎</span></div><h4>La ciencia de los detalles</h4><p>Las opciones predeterminadas, la forma de presentar una deuda y las normas sociales pueden cambiar decisiones. Las intervenciones deben probarse en su contexto: lo que funciona en un país puede producir otro resultado en otro.</p></div>
+    <div class="force-card"><div class="force-head"><span class="force-num">04</span><span class="force-icon">◌</span></div><h4>Productos que crean hábitos</h4><p>El primer pago, el uso recurrente y el regreso tras una pausa requieren miradas diferentes. B100 mostró otra conexión: reglas de ahorro vinculadas a caminar o reducir el uso de redes sociales, con objetivos definidos por el cliente.</p></div>
+    </div><div class="ff-meaning"><div class="meaning-mark">+</div><div><div class="meaning-title">Qué significa para Future Finance</div><p>Diseñar el futuro financiero exige combinar capacidad tecnológica con comprensión del comportamiento. La oportunidad es acompañar mejor al cliente, medir el efecto real de cada intervención y construir confianza para las decisiones que se delegan.</p></div></div><div class="questions-title">Incertidumbres y preguntas que quedan abiertas</div><div class="question-grid">
+    <div class="question-card"><span>01</span><p>¿Qué decisiones financieras delegaremos a agentes y qué límites y controles necesitaremos para confiar en ellos?</p></div>
+    <div class="question-card"><span>02</span><p>¿Cómo se repartirán la relación con el cliente y las responsabilidades entre agentes, bancos, comercios y redes de pago?</p></div>
+    <div class="question-card"><span>03</span><p>¿Cómo distinguir un hábito real de una respuesta temporal a un incentivo y comprobar qué intervención agrega valor?</p></div>
+    <div class="question-card"><span>04</span><p>¿Cómo escalar productos que conecten salud y ahorro manteniendo la transparencia, la elección del cliente y la rentabilidad?</p></div>
+    </div><div class="closing-question"><span>→</span><b>¿Cómo diseñamos servicios financieros que entiendan nuestras decisiones cuando una parte de ellas empieza a quedar en manos de la IA?</b></div><div class="experts-title">Expertos invitados</div><div class="experts-grid class2-experts">
+    <div class="expert"><span>KC</span><div><b>Kevin Canova</b><small>Inteligencia artificial · Agentes y resultados</small></div></div>
+    <div class="expert"><span>EV</span><div><b>Eduardo Vergara</b><small>Mastercard · Pagos agénticos</small></div></div>
+    <div class="expert"><span>OB</span><div><b>Ol Beun</b><small>Ciencia del comportamiento · Diseño y experimentación</small></div></div>
+    <div class="expert"><span>FC</span><div><b>Facundo Corsi</b><small>Comportamiento del usuario · Productos financieros</small></div></div>
+    <div class="expert"><span>JM</span><div><b>Jorge Mahía</b><small>B100 · Grupo ABANCA · Ahorro y salud</small></div></div>
+    </div>`;
+}
+
 function openSummary(n){
   const x=summaries[n], panel=document.getElementById('summary-panel'), c=document.getElementById('summary-content');
   if(n===1){
@@ -497,6 +527,8 @@ function openSummary(n){
     c.innerHTML=classTwoSummary();
   } else if(n===3){
     c.innerHTML=classThreeSummary();
+  } else if(n===4){
+    c.innerHTML=classFourSummary();
   } else {
     const placeholder = x.status==="future" ? "Disponible después de la clase." : "Contenido a incorporar desde el transcript de la clase.";
     c.innerHTML=`<div class="summary-kicker">Clase ${String(n).padStart(2,'0')} · Resumen</div>
