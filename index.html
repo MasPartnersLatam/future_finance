@@ -89,6 +89,14 @@ footer{border-top:1px solid var(--line);padding:45px 0 65px;color:var(--muted);f
 @media(max-width:560px){.class2-experts{grid-template-columns:1fr}}
 </style>
 
+<style id="radar-voting-style">
+#radar-grid .radar-vote{align-self:flex-start;display:inline-flex;align-items:center;gap:8px;margin-top:14px;padding:8px 13px;border:1px solid #dedfd9;border-radius:999px;background:#fff;color:#101217;font:700 13px Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;cursor:pointer}
+#radar-grid .radar-vote[aria-pressed="true"]{background:#65ded1;border-color:#55cfc1}
+#radar-grid .radar-vote:focus-visible{outline:2px solid #55cfc1;outline-offset:3px}
+#radar-grid .radar-vote:disabled{cursor:wait;opacity:.6}
+#radar-grid .radar-card.radar-voted{border-color:#55cfc1;box-shadow:inset 0 0 0 1px #55cfc1}
+#radar-vote-status{color:#c7ccd0;font-size:12px;line-height:1.5;margin:14px 0 0}
+</style>
 </head>
 <body>
 
@@ -132,18 +140,19 @@ footer{border-top:1px solid var(--line);padding:45px 0 65px;color:var(--muted);f
       <p class="radar2035-intro">A lo largo de las clases, distintos casos, preguntas y perspectivas fueron conectándose alrededor de estas transformaciones. Un punto de partida para reconocer qué está cambiando y explorar qué podría significar para la industria financiera.</p>
     </div>
     <div class="radar2035-grid" id="radar-grid">
-      <article class="radar-card"><div class="radar-num">01</div><h3>Se redefine quién ofrece los servicios financieros</h3><p>Bancos, fintechs y empresas de otros sectores pueden apoyarse en infraestructura compartida para ofrecer cuentas, pagos y crédito. Los casos de BaaS y finanzas embebidas muestran que la relación financiera puede comenzar dentro de un marketplace, una plataforma de movilidad o una aplicación.</p><div class="radar-question"><b>La pregunta abierta:</b>¿Quién conservará la relación con el cliente y quién proveerá la infraestructura?</div></article>
-<article class="radar-card"><div class="radar-num">02</div><h3>Los datos abiertos cambian la competencia</h3><p>Open Finance permite reunir información, mejorar ofertas de crédito, mover dinero y facilitar el cambio de proveedor. Pero compartir datos también abre discusiones sobre consentimiento, calidad, costos y quién consigue convertirse en el centro de la vida financiera del usuario.</p><div class="radar-question"><b>La pregunta abierta:</b>¿La apertura distribuirá el poder entre más actores o fortalecerá a unas pocas plataformas?</div></article>
-<article class="radar-card"><div class="radar-num">03</div><h3>La IA empieza a pasar de asistir a operar</h3><p>Vimos asistentes financieros, agentes con billeteras, iniciativas dentro de bancos y anuncios de servicios capaces de ejecutar operaciones. También aparecieron límites concretos de seguridad, autorización y confianza que condicionan cuánto se puede delegar.</p><div class="radar-question"><b>La pregunta abierta:</b>¿Hasta dónde delegaremos decisiones financieras y quién responderá por ellas?</div></article>
-<article class="radar-card"><div class="radar-num">04</div><h3>El dinero encuentra nuevos caminos para moverse</h3><p>Pagos instantáneos, tarjetas y stablecoins empiezan a combinarse para resolver necesidades locales e internacionales. Los casos mostraron oportunidades para reducir tiempos, costos y dinero inmovilizado, con experiencias cada vez más simples para el usuario.</p><div class="radar-question"><b>La pregunta abierta:</b>¿Cómo se repartirán los pagos entre estos rieles y quién controlará el acceso?</div></article>
-<article class="radar-card"><div class="radar-num">05</div><h3>Se amplían las formas de financiar e invertir</h3><p>Fondos de crédito, activos tokenizados y nuevas plataformas conectan necesidades de financiamiento con inversores. Conversamos sobre empresas que acceden a otras fuentes de capital y usuarios que encuentran nuevas formas de invertir, con desafíos de liquidez, evaluación y confianza.</p><div class="radar-question"><b>La pregunta abierta:</b>¿Cómo se repartirá el financiamiento entre bancos, mercados y plataformas?</div></article>
-<article class="radar-card"><div class="radar-num">06</div><h3>La regulación y la geopolítica reordenan el mercado</h3><p>Las reglas pueden abrir oportunidades, acelerar adopción o elevar las barreras de entrada. A la vez, las sanciones, la disputa por infraestructura y la fragmentación global ponen en tensión la promesa de servicios financieros sin fronteras.</p><div class="radar-question"><b>La pregunta abierta:</b>¿La industria será más global e interoperable o más fragmentada y concentrada?</div></article>
-<article class="radar-card"><div class="radar-num">07</div><h3>Cambia el cliente y cambia su vida financiera</h3><p>Vivimos más, nacen menos personas y las trayectorias de trabajo y retiro se vuelven menos lineales. La economía plateada y las nuevas relaciones entre generaciones desafían productos concebidos para otros clientes, otras familias y otros horizontes de vida.</p><div class="radar-question"><b>La pregunta abierta:</b>¿Cómo acompañará la industria vidas más largas y necesidades financieras diferentes?</div></article>
-<article class="radar-card"><div class="radar-num">08</div><h3>El clima y el impacto entran en las decisiones financieras</h3><p>La transición energética, los riesgos climáticos y las necesidades sociales ya aparecen en seguros, crédito e inversión. Los bonos temáticos y los casos de financiamiento de impacto muestran formas de incorporar estas variables, junto con dificultades para medirlas y darles escala.</p><div class="radar-question"><b>La pregunta abierta:</b>¿Cuánto cambiarán qué se financia, a qué precio y quién puede acceder?</div></article>
+      <article class="radar-card"><div class="radar-num">01</div><h3>Se redefine quién ofrece los servicios financieros</h3><p>Bancos, fintechs y empresas de otros sectores pueden apoyarse en infraestructura compartida para ofrecer cuentas, pagos y crédito. Los casos de BaaS y finanzas embebidas muestran que la relación financiera puede comenzar dentro de un marketplace, una plataforma de movilidad o una aplicación.</p><div class="radar-question"><b>La pregunta abierta:</b>¿Quién conservará la relación con el cliente y quién proveerá la infraestructura?</div><button type="button" class="radar-vote" data-signal-id="1" aria-pressed="false" aria-label="Votar por la señal 1" disabled><span aria-hidden="true">👍</span><span class="radar-vote-count">…</span></button></article>
+<article class="radar-card"><div class="radar-num">02</div><h3>Los datos abiertos cambian la competencia</h3><p>Open Finance permite reunir información, mejorar ofertas de crédito, mover dinero y facilitar el cambio de proveedor. Pero compartir datos también abre discusiones sobre consentimiento, calidad, costos y quién consigue convertirse en el centro de la vida financiera del usuario.</p><div class="radar-question"><b>La pregunta abierta:</b>¿La apertura distribuirá el poder entre más actores o fortalecerá a unas pocas plataformas?</div><button type="button" class="radar-vote" data-signal-id="2" aria-pressed="false" aria-label="Votar por la señal 2" disabled><span aria-hidden="true">👍</span><span class="radar-vote-count">…</span></button></article>
+<article class="radar-card"><div class="radar-num">03</div><h3>La IA empieza a pasar de asistir a operar</h3><p>Vimos asistentes financieros, agentes con billeteras, iniciativas dentro de bancos y anuncios de servicios capaces de ejecutar operaciones. También aparecieron límites concretos de seguridad, autorización y confianza que condicionan cuánto se puede delegar.</p><div class="radar-question"><b>La pregunta abierta:</b>¿Hasta dónde delegaremos decisiones financieras y quién responderá por ellas?</div><button type="button" class="radar-vote" data-signal-id="3" aria-pressed="false" aria-label="Votar por la señal 3" disabled><span aria-hidden="true">👍</span><span class="radar-vote-count">…</span></button></article>
+<article class="radar-card"><div class="radar-num">04</div><h3>El dinero encuentra nuevos caminos para moverse</h3><p>Pagos instantáneos, tarjetas y stablecoins empiezan a combinarse para resolver necesidades locales e internacionales. Los casos mostraron oportunidades para reducir tiempos, costos y dinero inmovilizado, con experiencias cada vez más simples para el usuario.</p><div class="radar-question"><b>La pregunta abierta:</b>¿Cómo se repartirán los pagos entre estos rieles y quién controlará el acceso?</div><button type="button" class="radar-vote" data-signal-id="4" aria-pressed="false" aria-label="Votar por la señal 4" disabled><span aria-hidden="true">👍</span><span class="radar-vote-count">…</span></button></article>
+<article class="radar-card"><div class="radar-num">05</div><h3>Se amplían las formas de financiar e invertir</h3><p>Fondos de crédito, activos tokenizados y nuevas plataformas conectan necesidades de financiamiento con inversores. Conversamos sobre empresas que acceden a otras fuentes de capital y usuarios que encuentran nuevas formas de invertir, con desafíos de liquidez, evaluación y confianza.</p><div class="radar-question"><b>La pregunta abierta:</b>¿Cómo se repartirá el financiamiento entre bancos, mercados y plataformas?</div><button type="button" class="radar-vote" data-signal-id="5" aria-pressed="false" aria-label="Votar por la señal 5" disabled><span aria-hidden="true">👍</span><span class="radar-vote-count">…</span></button></article>
+<article class="radar-card"><div class="radar-num">06</div><h3>La regulación y la geopolítica reordenan el mercado</h3><p>Las reglas pueden abrir oportunidades, acelerar adopción o elevar las barreras de entrada. A la vez, las sanciones, la disputa por infraestructura y la fragmentación global ponen en tensión la promesa de servicios financieros sin fronteras.</p><div class="radar-question"><b>La pregunta abierta:</b>¿La industria será más global e interoperable o más fragmentada y concentrada?</div><button type="button" class="radar-vote" data-signal-id="6" aria-pressed="false" aria-label="Votar por la señal 6" disabled><span aria-hidden="true">👍</span><span class="radar-vote-count">…</span></button></article>
+<article class="radar-card"><div class="radar-num">07</div><h3>Cambia el cliente y cambia su vida financiera</h3><p>Vivimos más, nacen menos personas y las trayectorias de trabajo y retiro se vuelven menos lineales. La economía plateada y las nuevas relaciones entre generaciones desafían productos concebidos para otros clientes, otras familias y otros horizontes de vida.</p><div class="radar-question"><b>La pregunta abierta:</b>¿Cómo acompañará la industria vidas más largas y necesidades financieras diferentes?</div><button type="button" class="radar-vote" data-signal-id="7" aria-pressed="false" aria-label="Votar por la señal 7" disabled><span aria-hidden="true">👍</span><span class="radar-vote-count">…</span></button></article>
+<article class="radar-card"><div class="radar-num">08</div><h3>El clima y el impacto entran en las decisiones financieras</h3><p>La transición energética, los riesgos climáticos y las necesidades sociales ya aparecen en seguros, crédito e inversión. Los bonos temáticos y los casos de financiamiento de impacto muestran formas de incorporar estas variables, junto con dificultades para medirlas y darles escala.</p><div class="radar-question"><b>La pregunta abierta:</b>¿Cuánto cambiarán qué se financia, a qué precio y quién puede acceder?</div><button type="button" class="radar-vote" data-signal-id="8" aria-pressed="false" aria-label="Votar por la señal 8" disabled><span aria-hidden="true">👍</span><span class="radar-vote-count">…</span></button></article>
     </div>
+    <p id="radar-vote-status" role="status" aria-live="polite">Cargando votos colectivos… Podés elegir hasta 3 señales.</p>
     <div class="radar2035-foot">
       <p><strong>Explorá cada tema</strong> para volver sobre las conversaciones, las señales y las preguntas que surgieron en las clases.</p>
-      <a href="#radar-grid">Ver el mapa completo de señales e incertidumbres →</a>
+      <a href="https://drive.google.com/drive/folders/1JSHxkIo9y74Z3cyxFJ7SKK6dh7T9Y2fO?role=reader" target="_blank" rel="noopener">Ver el mapa completo de señales e incertidumbres →</a>
     </div>
   </div>
 </section>
@@ -159,11 +168,11 @@ footer{border-top:1px solid var(--line);padding:45px 0 65px;color:var(--muted);f
 
 <article class="meet" data-class="3"><b>02.10.26 · ONLINE</b><div class="num">03</div><h3>La digitalización de los activos y la infraestructura</h3><p>9:00–10:25 · Infraestructura Financiera<br>10:35–12:00 · Activos Digitales</p><div class="people">Marcelo Franca · Gabriel Ayala · Hernán Corral<br><br>Manuel Beaudroit · Tassia Skoulade</div><button class="sumlink summary-btn" onclick="openSummary(3)">Ver resumen de la clase ↓</button></article>
 
-<article class="meet" data-class="4"><b>09.10.26 · ONLINE</b><div class="num">04</div><h3>Behavioral Economics e Inteligencia Artificial</h3><p>Bloque 1 · Inteligencia Artificial<br>Bloque 2 · Behavioral Economics</p><div class="people">Kevin Canova · Eduardo Vergara<br><br>Ol Beun · Facundo Corsi · Jorge Mahía</div><button class="sumlink summary-btn" onclick="openSummary(4)">Ver resumen de la clase ↓</button></article>
+<article class="meet" data-class="4"><b>09.10.26 · ONLINE</b><div class="num">04</div><h3>Behavioral Economics e Inteligencia Artificial</h3><p>9:00–10:25 · Behavioral Economics<br>10:35–12:00 · Inteligencia Artificial</p><div class="people">Ol Beun · Facundo Corsi · Jorge Mahía<br><br>Fredi Vivas · Eduardo Vergara · Lucas Gonzalez</div><button class="sumlink summary-btn" onclick="openSummary(4)">Ver resumen de la clase ↓</button></article>
 
-<article class="meet" data-class="5"><b>16.10.26 · ONLINE</b><div class="num">05</div><h3>Foresight</h3><p>9:00–10:25 · El futuro del mundo<br>10:35–12:00 · El futuro de la industria financiera</p><div class="people">Alejandro Repetto · Mike Santos · Tomi Braun<br><br>Jesús Pérez · Persona a confirmar</div><button class="sumlink summary-btn" onclick="openSummary(5)">Ver resumen de la clase ↓</button></article>
+<article class="meet current" data-class="5"><b>16.10.26 · ONLINE</b><div class="num">05</div><h3>Foresight</h3><p>9:00–10:25 · El futuro del mundo<br>10:35–12:00 · El futuro de la industria financiera</p><div class="people">Alejandro Repetto · Mike Santos · Tomi Braun<br><br>Jesús Pérez · Persona a confirmar</div><button class="sumlink summary-btn" onclick="openSummary(5)">Ver resumen de la clase ↓</button></article>
 
-<article class="meet current" data-class="6"><b>23.10.26 · PRESENCIAL / ONLINE</b><div class="num">06</div><h3>Future-Proof</h3><p>9:00–13:00 · Taller<br>13:00–14:00 · Almuerzo<br>14:00–16:00 · Cierre e invitados especiales</p><div class="people">Jornada de cierre · Future Proof</div><button class="sumlink summary-btn" onclick="openSummary(6)">Ver resumen de la clase ↓</button></article>
+<article class="meet" data-class="6"><b>23.10.26 · PRESENCIAL / ONLINE</b><div class="num">06</div><h3>Future-Proof</h3><p>9:00–13:00 · Taller<br>13:00–14:00 · Almuerzo<br>14:00–16:00 · Cierre e invitados especiales</p><div class="people">Jornada de cierre · Future Proof</div><button class="sumlink summary-btn" onclick="openSummary(6)">Ver resumen de la clase ↓</button></article>
 </div>
 
 <div id="summary-panel" class="summary-panel">
@@ -343,12 +352,6 @@ footer{border-top:1px solid var(--line);padding:45px 0 65px;color:var(--muted);f
 <footer><div class="wrap"><b style="color:#111">Future Finance 2026</b> · Universidad de San Andrés · AMBA · +Partners</div></footer>
 
 <script>
-window.addEventListener('load', function(){
-  const carousel=document.getElementById('carousel');
-  const next=carousel.querySelector('[data-class="6"]');
-  carousel.scrollLeft=next.offsetLeft-carousel.querySelector('.meet').offsetLeft;
-});
-
 function slide(d){document.getElementById('carousel').scrollBy({left:d*Math.min(innerWidth*.7,460),behavior:'smooth'})}
 function placeholder(name){alert(name+' — link a incorporar.');return false;}
 
@@ -495,28 +498,35 @@ function classThreeSummary(){
     </div>`;
 }
 
+
 function classFourSummary(){
-  return `<div class="summary-kicker">Clase 04 · 09.10.26</div><h3>Behavioral Economics e Inteligencia Artificial</h3>
-    <div class="class-lead"><b>Idea central de la clase</b><p>La inteligencia artificial empieza a actuar por nosotros y la ciencia del comportamiento ayuda a entender cómo decidimos. La clase conectó ambas miradas con un desafío para la industria financiera: definir qué problema resolver, cómo construir confianza y cómo diseñar productos que acompañen las decisiones y los hábitos reales de las personas.</p></div>
-    <div class="class-lead"><b>Bloque 1 · Inteligencia Artificial</b><p>Kevin Canova planteó una mirada sobre la evolución de la IA y los agentes, la delegación de decisiones y la necesidad de evaluar los resultados por el problema que resuelven. Eduardo Vergara llevó esa conversación a los pagos agénticos y a lo que está desarrollando Mastercard: qué cambia cuando un agente puede comprar y usar nuestro dinero, y qué condiciones de autorización, seguridad y confianza necesita el ecosistema.</p></div>
-    <div class="class-lead"><b>Bloque 2 · Behavioral Economics</b><p>Ol Beun introdujo la ciencia del comportamiento, los sesgos y un marco para diseñar experiencias simples, atractivas, sociales y oportunas. Facundo Corsi mostró cómo una misma transacción puede representar momentos distintos del vínculo con el cliente y por qué hay que comprobar las hipótesis antes de intervenir. Jorge Mahía compartió el caso de B100, del Grupo ABANCA, que conecta ahorro, salud personal y cuidado del planeta.</p></div>
-    <div class="forces-title">4 señales que conectan tecnología y comportamiento</div><div class="forces-grid">
-    <div class="force-card"><div class="force-head"><span class="force-num">01</span><span class="force-icon">⌘</span></div><h4>De asistir a actuar</h4><p>Los agentes amplían la posibilidad de delegar tareas y decisiones. El punto de partida es identificar el problema y evaluar el resultado obtenido, más allá de la herramienta o del contenido que produce.</p></div>
-    <div class="force-card"><div class="force-head"><span class="force-num">02</span><span class="force-icon">↗</span></div><h4>Pagos agénticos</h4><p>Cuando la IA compra por el usuario, la confianza también debe alcanzar a bancos, comercios y redes de pago. Autorización, límites y seguridad pasan a ser parte central de la experiencia.</p></div>
-    <div class="force-card"><div class="force-head"><span class="force-num">03</span><span class="force-icon">◎</span></div><h4>La ciencia de los detalles</h4><p>Las opciones predeterminadas, la forma de presentar una deuda y las normas sociales pueden cambiar decisiones. Las intervenciones deben probarse en su contexto: lo que funciona en un país puede producir otro resultado en otro.</p></div>
-    <div class="force-card"><div class="force-head"><span class="force-num">04</span><span class="force-icon">◌</span></div><h4>Productos que crean hábitos</h4><p>El primer pago, el uso recurrente y el regreso tras una pausa requieren miradas diferentes. B100 mostró otra conexión: reglas de ahorro vinculadas a caminar o reducir el uso de redes sociales, con objetivos definidos por el cliente.</p></div>
-    </div><div class="ff-meaning"><div class="meaning-mark">+</div><div><div class="meaning-title">Qué significa para Future Finance</div><p>Diseñar el futuro financiero exige combinar capacidad tecnológica con comprensión del comportamiento. La oportunidad es acompañar mejor al cliente, medir el efecto real de cada intervención y construir confianza para las decisiones que se delegan.</p></div></div><div class="questions-title">Incertidumbres y preguntas que quedan abiertas</div><div class="question-grid">
-    <div class="question-card"><span>01</span><p>¿Qué decisiones financieras delegaremos a agentes y qué límites y controles necesitaremos para confiar en ellos?</p></div>
-    <div class="question-card"><span>02</span><p>¿Cómo se repartirán la relación con el cliente y las responsabilidades entre agentes, bancos, comercios y redes de pago?</p></div>
-    <div class="question-card"><span>03</span><p>¿Cómo distinguir un hábito real de una respuesta temporal a un incentivo y comprobar qué intervención agrega valor?</p></div>
-    <div class="question-card"><span>04</span><p>¿Cómo escalar productos que conecten salud y ahorro manteniendo la transparencia, la elección del cliente y la rentabilidad?</p></div>
-    </div><div class="closing-question"><span>→</span><b>¿Cómo diseñamos servicios financieros que entiendan nuestras decisiones cuando una parte de ellas empieza a quedar en manos de la IA?</b></div><div class="experts-title">Expertos invitados</div><div class="experts-grid class2-experts">
-    <div class="expert"><span>KC</span><div><b>Kevin Canova</b><small>Inteligencia artificial · Agentes y resultados</small></div></div>
-    <div class="expert"><span>EV</span><div><b>Eduardo Vergara</b><small>Mastercard · Pagos agénticos</small></div></div>
-    <div class="expert"><span>OB</span><div><b>Ol Beun</b><small>Ciencia del comportamiento · Diseño y experimentación</small></div></div>
-    <div class="expert"><span>FC</span><div><b>Facundo Corsi</b><small>Comportamiento del usuario · Productos financieros</small></div></div>
-    <div class="expert"><span>JM</span><div><b>Jorge Mahía</b><small>B100 · Grupo ABANCA · Ahorro y salud</small></div></div>
-    </div>`;
+  return `<div class="summary-kicker">Clase 04 · 09.10.26</div>
+    <h3>Behavioral Economics e Inteligencia Artificial</h3>
+    <div class="class-lead">
+      <b>Idea central de la clase</b>
+      <p>La capacidad técnica de la inteligencia artificial avanza rápido, pero su adopción en finanzas depende de algo más que la tecnología. Agentes capaces de actuar, pagos cada vez más automatizados y experiencias más personalizadas obligan a combinar identidad, consentimiento, confianza, comprensión del usuario y transformación organizacional.</p>
+    </div>
+    <div class="forces-title">2 transformaciones que empiezan a encontrarse</div>
+    <div class="forces-grid class2-forces">
+      <div class="force-card"><div class="force-head"><span class="force-num">01</span><span class="force-icon">⌘</span></div><h4>IA agéntica y pagos</h4><p>La IA empieza a pasar de asistir a operar. Para que un agente pueda ejecutar una acción financiera necesita identidad, consentimiento, intención y límites claros de mandato. A medida que aumenta la autonomía aparece una pregunta central: quién responde cuando algo sale mal.</p><div class="signal-tags"><span>Agentes financieros</span><span>Identidad + consentimiento</span><span>Responsabilidad</span></div></div>
+      <div class="force-card"><div class="force-head"><span class="force-num">02</span><span class="force-icon">◌</span></div><h4>Comportamiento y bienestar</h4><p>Las personas no deciden solamente por precio o información. Contexto, defaults, framing e incentivos modifican las decisiones. La personalización exige entender mejor al usuario, experimentar y aprender, sin asumir que eliminar toda fricción produce necesariamente mejores resultados.</p><div class="signal-tags"><span>Behavioral Economics</span><span>Personalización</span><span>Fricción protectora</span></div></div>
+    </div>
+    <div class="ff-meaning"><div class="meaning-mark">!</div><div><div class="meaning-title">¿Qué significa esto para Future Finance?</div><p>El futuro de las finanzas no depende sólo de cuánto pueda hacer la tecnología, sino de cuánto estemos dispuestos a delegar y bajo qué reglas. La oportunidad está en combinar automatización y personalización con mecanismos que preserven confianza, control y bienestar financiero.</p></div></div>
+    <div class="questions-title">Señales que dejó la clase</div>
+    <div class="question-grid">
+      <div class="question-card"><span>01</span><p>La IA exige transformar procesos, capacidades internas y formas de trabajo, no simplemente incorporar una nueva herramienta.</p></div>
+      <div class="question-card"><span>02</span><p>Los agentes conectados a servicios financieros necesitan resolver identidad, consentimiento, intención y límites de autorización antes de operar con mayor autonomía.</p></div>
+      <div class="question-card"><span>03</span><p>Menos fricción no siempre significa una mejor experiencia: algunas fricciones pueden proteger al usuario y mejorar sus decisiones.</p></div>
+      <div class="question-card"><span>04</span><p>Bienestar y sostenibilidad pueden integrarse directamente en la propuesta de valor de un producto financiero, no quedar sólo como iniciativas paralelas.</p></div>
+    </div>
+    <div class="questions-title">Preguntas que nos llevamos</div>
+    <div class="question-grid">
+      <div class="question-card"><span>01</span><p>¿Hasta dónde estaremos dispuestos a delegar decisiones financieras relevantes a agentes tecnológicos?</p></div>
+      <div class="question-card"><span>02</span><p>¿Quién será responsable cuando una decisión ejecutada por un agente produzca un resultado incorrecto o no deseado?</p></div>
+      <div class="question-card"><span>03</span><p>¿Cómo cambia la relación con el cliente cuando un agente empieza a mediar entre la persona y los proveedores financieros?</p></div>
+      <div class="question-card"><span>04</span><p>¿Cómo personalizar más sin reducir la autonomía del usuario ni convertir cada decisión en un ejercicio de manipulación?</p></div>
+    </div>
+    <div class="closing-question"><span>→</span><b>¿Qué pasa cuando la tecnología puede decidir y actuar por nosotros, pero la confianza, el control y la responsabilidad siguen siendo profundamente humanos?</b></div>`;
 }
 
 function openSummary(n){
@@ -622,6 +632,114 @@ function ffLogin(e){
 }
 </script>
 
+<script id="radar-voting-script">
+(() => {
+  'use strict';
+  const endpoint = 'https://myodmwnbzjlwmqtctlda.supabase.co/rest/v1/radar_votes';
+  const key = 'sb_publishable_SxCLJ5SV66mXgTXkV-R0DA_sL7x0Dku';
+  const buttons = [...document.querySelectorAll('#radar-grid .radar-vote')];
+  const status = document.getElementById('radar-vote-status');
+  let voter, selected = new Set(), counts = Array(9).fill(0), ready = false, busy = false;
+  const message = text => { status.textContent = text; };
+  function render() {
+    buttons.forEach(button => {
+      const id = Number(button.dataset.signalId), active = selected.has(id);
+      button.querySelector('.radar-vote-count').textContent = ready ? counts[id] : '…';
+      button.setAttribute('aria-pressed', String(active));
+      button.setAttribute('aria-label', `${active ? 'Retirar voto de' : 'Votar por'} la señal ${id}. ${ready ? counts[id] : 'Cargando'} votos colectivos`);
+      button.disabled = !ready || busy;
+      button.closest('.radar-card').classList.toggle('radar-voted', active);
+    });
+  }
+  async function request(query, options = {}) {
+    const controller = new AbortController(), timeout = setTimeout(() => controller.abort(), 15000);
+    try {
+      const response = await fetch(endpoint + query, {
+        ...options, signal: controller.signal,
+        headers: { apikey: key, 'Content-Type': 'application/json', ...options.headers }
+      });
+      if (!response.ok) throw new Error(`Supabase ${response.status}`);
+      const body = await response.text();
+      return body ? JSON.parse(body) : null;
+    } finally { clearTimeout(timeout); }
+  }
+  async function refresh() {
+    // Page through every vote: the API may cap each response at 1,000 rows.
+    const nextCounts = Array(9).fill(0), nextSelected = new Set();
+    let offset = 0;
+    for (;;) {
+      const rows = await request(`?select=signal_id,voter_id&signal_id=in.(1,2,3,4,5,6,7,8)&order=id.asc&limit=1000&offset=${offset}`);
+      if (!Array.isArray(rows)) throw new Error('Respuesta inválida');
+      rows.forEach(row => {
+        const id = Number(row.signal_id);
+        if (id >= 1 && id <= 8) {
+          nextCounts[id]++;
+          if (row.voter_id === voter) nextSelected.add(id);
+        }
+      });
+      if (rows.length === 0) break;
+      offset += rows.length;
+    }
+    counts = nextCounts; selected = nextSelected; ready = true; render();
+  }
+  async function toggle(id) {
+    if (!ready || busy) return;
+    busy = true; render();
+    try {
+      // Read again before changing a vote, including changes from other tabs.
+      await refresh();
+      if (selected.has(id)) {
+        await request(`?signal_id=eq.${id}&voter_id=eq.${encodeURIComponent(voter)}`, {
+          method: 'DELETE', headers: { Prefer: 'return=minimal' }
+        });
+      } else {
+        if (selected.size >= 3) {
+          message('Ya elegiste 3 señales. Retirá un voto para elegir otra.');
+          return;
+        }
+        await request('', { method: 'POST', headers: { Prefer: 'return=minimal' },
+          body: JSON.stringify({ signal_id: id, voter_id: voter }) });
+      }
+      await refresh();
+      message(`${selected.size} de 3 señales elegidas. Tocá una señal votada para retirar tu voto.`);
+    } catch (error) {
+      ready = false;
+      message('No pudimos confirmar los votos. Reintentaremos la conexión automáticamente.');
+    } finally { busy = false; render(); }
+  }
+  try {
+    voter = localStorage.getItem('futureFinanceRadarVoterId');
+    if (!voter) {
+      voter = crypto.randomUUID ? crypto.randomUUID() : [...crypto.getRandomValues(new Uint8Array(16))].map(x => x.toString(16).padStart(2, '0')).join('');
+      localStorage.setItem('futureFinanceRadarVoterId', voter);
+    }
+  } catch (error) {
+    message('Habilitá el almacenamiento del navegador para guardar tu identidad y votar.');
+    render(); return;
+  }
+  buttons.forEach(button => button.addEventListener('click', () => {
+    const action = () => toggle(Number(button.dataset.signalId));
+    // Serialize mutations from tabs sharing this browser identity.
+    if (navigator.locks) navigator.locks.request('futureFinanceRadarVote', action);
+    else action();
+  }));
+  async function sync() {
+    if (busy || document.hidden) return;
+    busy = true;
+    try {
+      await refresh();
+      message(`${selected.size} de 3 señales elegidas. Tocá una señal votada para retirar tu voto.`);
+    } catch (error) {
+      ready = false;
+      message('No pudimos cargar los votos. Reintentaremos la conexión automáticamente.');
+    } finally { busy = false; render(); }
+  }
+  render(); sync();
+  setInterval(sync, 15000);
+  window.addEventListener('focus', sync);
+  document.addEventListener('visibilitychange', sync);
+})();
+</script>
 </body></html>
 <style>
 .quick{grid-template-columns:repeat(4,1fr)}
